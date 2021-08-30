@@ -1,5 +1,5 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "", "elearning");
+$koneksi = mysqli_connect("localhost", "root", "", "learnify");
 
 // Check connection
 if (mysqli_connect_errno()) {
