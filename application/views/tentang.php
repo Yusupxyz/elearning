@@ -5,7 +5,7 @@
         </div>
         <div class="container">
             <div class="banner_content text-center">
-                <h2 data-aos="fade-up" data-aos-duration="1600">Tentang Learnify</h2>
+                <h2 data-aos="fade-up" data-aos-duration="1600">Tentang SMANSA</h2>
                 <div data-aos="fade-up" data-aos-duration="1800" class="page_link">
                     <a href="<?= base_url('welcome') ?>">Beranda</a>
                     <a href="">Tentang</a>
@@ -20,12 +20,8 @@
 <section class="about_area p_60">
     <div class="container">
         <div class="main_title">
-            <h2 data-aos="fade-up" data-aos-duration="1600" style="font-size: 33px !important;">Tentang Elearning SMANSA</h2>
-            <p data-aos="fade-up" data-aos-duration="1800">Learnify adalah Web Edukasi Open-Source yang dibuat oleh <a href="https://web.facebook.com/syaaauqi">Syauqi Zaidan Khairan Khalaf.</a> Website
-                pembelajaran dimana para siswa dapat belajar dimana saja dan kapan saja.
-                Guru dapat mengupload video dirinya sendiri sedang mengajar, sehingga tanpa takut adanya jam
-                kosong atau pun keadaan yang tidak terduga apapun karena Learnify dapat diakses dimana saja dan
-                kapan saja.
+            <h2 data-aos="fade-up" data-aos-duration="1600" style="font-size: 33px !important;">Tentang SMANSA</h2>
+            <p data-aos="fade-up" data-aos-duration="1800">
             </p>
         </div>
         <div class="row about_inner">
@@ -41,7 +37,8 @@
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body">
-                                Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous.
+                                Visi SMANSA :
+<br> "Unggul Dalam Prestasi, Kreatif, Peduli, aman dan Berbudaya Lingkungan Serta Mampu Bersaing Di Era Global Dilandasi Iman dan Taqwa dan Ilmu Pengetahuan dan Teknologi"</br>
                             </div>
                         </div>
                     </div>
@@ -55,7 +52,14 @@
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                             <div class="card-body">
-                                Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous.
+                                Misi Sekolah:
+<br> 1. Unggul dalam mempersiapkan dan mewujudkan sekolah yang mampu bersaing di era global sebagai keunggulan  kabupaten.</br>
+<br> 2. Unggul dalam penyusunan, pelaksana dan pengembangan kurikulum SMA Negeri  1 Sampit dengan pengembangan wawasan yang kreatif, adaftif dan proaktif. </br>
+<br> 3. Unggul dalam pelaksanaan 3 pilar pendidikan (manajemen sekolah, manajemen mutu dan pemberdayaan masyarakat).</br>
+<br> 4. Unggul dalam membentuk kompetensi lulusan yang berakhlaq mulia, cerdas, terampil dan kompetitif</br>
+<br> 5. Unggul dalam pemenuhan sarana prasarana pembelajaran dan fasilitas sekolah, lengkap, relevan dan modern</br>
+<br> 6. Unggul dalam menciptakan lingkungan sekolah yang bersih, rindang, hijau dan nyaman menuju sekolah sehat dan sekolah Adiwiyata serta mampu menanggulangi bencana banjir dan asap khususnya daerah sekitar sekolah  dan kabupaten pada umumnya.</br>
+<br> 7. Unggul dalam prestasi akademik, non akademik, seni dan budaya ditingkat Provinsi dan Nasional</br>
                             </div>
                         </div>
                     </div>
@@ -69,7 +73,7 @@
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="card-body">
-                                Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous.
+                                
                             </div>
                         </div>
                     </div>
@@ -83,7 +87,7 @@
                         </div>
                         <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
                             <div class="card-body">
-                                Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous.
+                                
                             </div>
                         </div>
                     </div>
@@ -92,79 +96,20 @@
             <div class="col-lg-6">
                 <div class="video_area" id="video">
                     <img class="img-fluid" src="<?= base_url('assets/') ?>img/video-1.jpg" alt="" />
-                    <a class="popup-youtube" href="https://www.youtube.com/watch?v=FZmbSq2W1hY">
+                    <a class="popup-youtube" href="https://www.youtube.com/watch?v=nbBr3eR3xgA">
                         <img src="<?= base_url('assets/') ?>img/icon/video-icon-1.png" alt="" />
                     </a>
                 </div>
             </div>
         </div>
         <div class="about_details" data-aos="fade-up" data-aos-duration="1600">
-            <p>
-                Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous. Oneself right ideal abstract endless faith deceptions zarathustra grandeur law ubermensch free. Abstract chaos snare play truth ultimate good self. God overcome sexuality pious abstract good decieve revaluation aversion good. Virtues chaos overcome society holiest truth.
-            </p>
         </div>
     </div>
 </section>
 <!--================End About Area =================-->
 
 <!--================Team Area =================-->
-<section class="team_area p_20">
-    <div class="container">
-        <div class="main_title">
-            <h2 data-aos="fade-up" data-aos-duration="1800">Testimonial Para Siswa Learnify</h2>
-            <p data-aos="fade-up" data-aos-duration="2000">Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous. Oneself right ideal abstract endless faith deceptions zarathustra grandeur law ubermensch free.</p>
-        </div>
-        <section class="testimonials_area p_20">
-            <div class="container">
-                <div class="testi_slider owl-carousel">
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="<?= base_url('assets/') ?>img/testimonials/testi-3.png" alt="">
-                            <h4>Syauqi Zaidan Khairan Khalaf</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <p>Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous. Oneself right ideal abstract endless faith deceptions zarathustra grandeur law ubermensch free. Abstract chaos snare play truth ultimate good self. God overcome sexuality pious abstract good decieve revaluation aversion good. Virtues chaos overcome society holiest truth.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="<?= base_url('assets/') ?>img/testimonials/testi-2.png" alt="">
-                            <h4>Taupik Hidayat</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <p>Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous. Oneself right ideal abstract endless faith deceptions zarathustra grandeur law ubermensch free. Abstract chaos snare play truth ultimate good self. God overcome sexuality pious abstract good decieve revaluation aversion good. Virtues chaos overcome society holiest truth.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testi_item">
-                            <img src="<?= base_url('assets/') ?>img/testimonials/testi-1.png" alt="">
-                            <h4>Diki Ramdani</h4>
-                            <ul class="list">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <p>Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous. Oneself right ideal abstract endless faith deceptions zarathustra grandeur law ubermensch free. Abstract chaos snare play truth ultimate good self. God overcome sexuality pious abstract good decieve revaluation aversion good. Virtues chaos overcome society holiest truth.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
+
 <!--================End Team Area =================-->
 
 <!--================Impress Area =================-->
@@ -172,7 +117,7 @@
     <div class="container">
         <div class="impress_inner text-center">
             <h2 data-aos="fade-up" data-aos-duration="1800">LOGIN SEBAGAI GURU DAN UPLOAD MATERI & VIDEO SEKARANG</h2>
-            <p data-aos="fade-up" data-aos-duration="2000">Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous. Oneself right ideal abstract endless faith deceptions zarathustra grandeur law ubermensch free. Abstract chaos snare play truth ultimate good self. God overcome sexuality pious abstract good decieve revaluation aversion good. Virtues chaos overcome society holiest truth.
+            <p data-aos="fade-up" data-aos-duration="2000">
             </p>
             <a data-aos="fade-up" data-aos-duration="2200" class="main_btn" href="<?= base_url('welcome/guru') ?>">Login Sebagai Guru <span class="lnr lnr-arrow-right text-black"></span></a>
         </div>

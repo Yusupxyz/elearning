@@ -25,20 +25,16 @@
                 <div class="contact_info">
                     <div class="info_item">
                         <i class="lnr lnr-home"></i>
-                        <h6>Jl.Jendral Soedirman No.269
-                            Ciamis, Jawa Barat</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <h6>Jln. Jend. Ahmad Yani No. 18 Sampit Kalimantan Tengah</h6>
                     </div>
                     <div class="info_item">
                         <i class="lnr lnr-phone-handset"></i>
                         <h6><a href="#">
-                                (0265) 771204</a></h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                 (0531) 21404</a></h6>
                     </div>
                     <div class="info_item">
                         <i class="lnr lnr-envelope"></i>
-                        <h6><a href="#">apps.learnify@gmail.com</a></h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <h6><a href="#">smansa_kotim@yahoo.co.id</a></h6>
                     </div>
                 </div>
             </div>
