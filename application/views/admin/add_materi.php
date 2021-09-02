@@ -109,7 +109,7 @@
                                         Pembuat</a>
                                 </li>
                                 <li><a class="nav-link" href="<?= base_url('admin/about_learnify') ?>">Tentang
-                                        Learnify</a>
+                                        </a>
                                 </li>
                             </ul>
                         </li>
@@ -210,7 +210,7 @@
         <!-- Start Footer -->
         <footer class="main-footer">
             <div class="text-center">
-                 Copyright &copy; 2021 <div class="bullet"></div><a href="">Zhika</a>
+                 Copyright &copy; 2021 <div class="bullet"></div>
 
             </div>
         </footer>
