@@ -95,7 +95,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="video_area" id="video">
-                    <img class="img-fluid" src="<?= base_url('assets/') ?>img/video-1.jpg" alt="" />
+                    <img class="img-fluid" src="<?= base_url('assets/') ?>img/video-smansa.jpg" alt="" />
                     <a class="popup-youtube" href="https://www.youtube.com/watch?v=nbBr3eR3xgA">
                         <img src="<?= base_url('assets/') ?>img/icon/video-icon-1.png" alt="" />
                     </a>

@@ -48,7 +48,7 @@
                         <div class="courses_item" data-aos="fade-right" data-aos-duration="1800">
                             <img src="<?= base_url('assets/') ?>img/courses/course-1.jpg" alt="">
                             <div class="hover_text">
-                                <a class="cat" href="#">Gratis</a>
+                                
                                 <a href="javaScript:void(0);">
                                     <h4>Matematika </h4>
                                 </a>
@@ -65,7 +65,7 @@
                         <div class="courses_item" data-aos="fade-down" data-aos-duration="1800">
                             <img src="<?= base_url('assets/') ?>img/courses/course-2.jpg" alt="">
                             <div class="hover_text">
-                                <a class="cat" href="#">Gratis</a>
+                               
                                 <a href="javaScript:void(0);">
                                     <h4>IPA </h4>
                                 </a>
@@ -81,7 +81,7 @@
                         <div class="courses_item" data-aos="fade-right" data-aos-duration="1800">
                             <img src="<?= base_url('assets/') ?>img/courses/course-4.jpg" alt="">
                             <div class="hover_text">
-                                <a class="cat" href="#">Gratis</a>
+                                
                                 <a href="javaScript:void(0);">
                                     <h4>Bahasa Inggris </h4>
                                 </a>
@@ -97,7 +97,7 @@
                         <div class="courses_item" data-aos="fade-up" data-aos-duration="1800">
                             <img src="<?= base_url('assets/') ?>img/courses/course-5.jpg" alt="">
                             <div class="hover_text">
-                                <a class="cat" href="#">Gratis</a>
+                                
                                 <a href="javaScript:void(0);">
                                     <h4>Bahasa Indonesia</h4>
                                 </a>
@@ -116,7 +116,7 @@
                 <div class="course_item" data-aos="fade-left" data-aos-duration="1800">
                     <img src="<?= base_url('assets/') ?>img/courses/course-3.jpg" alt="">
                     <div class="hover_text">
-                        <a class="cat" href="#">Gratis</a>
+                        
                         <a href="javaScript:void(0);">
                             <h4>Agama Islam</h4>
                         </a>
