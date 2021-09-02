@@ -15,7 +15,11 @@ class M_tugas extends CI_Model
 
     public function tampil_data_byid($id)
     {
-        $this->db->select('*');
+        $this->db->select('*, mapel.nama as mapel, guru.nama_guru as guru, kelas.nama as kelas');
+        $this->db->join('mapel', 'mapel.id = tugas.mapel_id','left');
+        $this->db->join('guru', 'guru.nip = tugas.nip','left');
+        $this->db->join('tugas_kelas', 'tugas_kelas.tugas_id = tugas.id','left');
+        $this->db->join('kelas', 'tugas_kelas.kelas_id = kelas.id','left');
         $this->db->where('tugas.id',$id);
         return $this->db->get('tugas');
     }

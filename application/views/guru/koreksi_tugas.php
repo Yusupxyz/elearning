@@ -362,7 +362,7 @@ echo $data['user']['nama_guru'];
                         <?= $tugas->judul ?>
                     </div>
                     <div class="btn-group">
-                        <a href="../tambah_soal/<?= $tugas->id ?>" class="btn btn-primary iframe-pertanyaan cboxElement" title="Export Excel">Export Excel</a>
+                        <a href="../export/<?= $tugas->id ?>" class="btn btn-primary iframe-pertanyaan cboxElement" title="Export Excel">Export Excel</a>
                     </div>
                         <!--Begin::Dashboard 7-->
 

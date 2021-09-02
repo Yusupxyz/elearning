@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+require('./application/third_party/phpspreadsheet/vendor/autoload.php');
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 class Guru extends CI_Controller
 {
     public function __construct()
@@ -519,4 +522,81 @@ class Guru extends CI_Controller
         $this->session->set_flashdata('success-edit', 'berhasil');
         redirect('guru/koreksi_tugas/'.$tugas_id);
     }
+
+    public function export($id)
+     {
+        $this->load->model('m_tugas');
+
+            $tugas = $this->m_tugas->tampil_data_byid($id)->row();
+            $jawaban = $this->m_tugas->tampil_jawaban($id)->result();
+
+          $spreadsheet = new Spreadsheet;
+
+          $styleArrayFirstRow = [
+                'font' => [
+                    'bold' => true,
+                ]
+            ];
+        $midle =[
+            'alignment' => [
+                'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+            ]
+            ];
+            $left =[
+                'alignment' => [
+                    'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+                    'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT,
+                ]
+                ];
+            $border = [
+                'borders' => [
+                    'allBorders' => [
+                        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                    ]
+                ],
+            ];
+
+          $spreadsheet->setActiveSheetIndex(0)
+                      ->setCellValue('A1', 'Data Nilai Tugas '.$tugas->mapel)
+                      ->setCellValue('A2', 'Guru: '.$tugas->guru)
+                      ->setCellValue('A3', 'Judul: '.$tugas->judul)
+                      ->setCellValue('A4', 'Kelas: '.$tugas->kelas)
+                      ->setCellValue('A5', 'No.')
+                      ->setCellValue('B5', 'NIS')
+                      ->setCellValue('C5', 'Nama Siswa')
+                      ->setCellValue('D5', 'Nilai');
+           
+           $spreadsheet->getActiveSheet()->getStyle('A1:D5')->applyFromArray($styleArrayFirstRow);
+           $spreadsheet->getActiveSheet()->getStyle('A5:D5')->applyFromArray($midle);
+
+          $kolom = 6;
+          $nomor = 1;
+          foreach($jawaban as $value) {
+
+               $spreadsheet->setActiveSheetIndex(0)
+                           ->setCellValue('A' . $kolom, $nomor)
+                           ->setCellValue('B' . $kolom, $value->nis)
+                           ->setCellValue('C' . $kolom, $value->nama_siswa)
+                           ->setCellValue('D' . $kolom, $value->nilai);
+
+               $kolom++;
+               $nomor++;
+
+          }
+
+          $spreadsheet->getActiveSheet()->getStyle('A5:D'.$kolom)->applyFromArray($border);
+          $spreadsheet->getActiveSheet()->getStyle('A6:A'.$kolom)->applyFromArray($midle);
+          $spreadsheet->getActiveSheet()->getStyle('D6:D'.$kolom)->applyFromArray($midle);
+          $spreadsheet->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
+          $spreadsheet->getActiveSheet()->getStyle('B6:B'.$kolom)->applyFromArray($left);
+
+          $writer = new Xlsx($spreadsheet);
+
+          header('Content-Type: application/vnd.ms-excel');
+	  header('Content-Disposition: attachment;filename="Data Nilai_'.$tugas->mapel.'_'.$tugas->guru.'_'.$tugas->kelas.'.xlsx"');
+	  header('Cache-Control: max-age=0');
+
+	  $writer->save('php://output');
+     }
 }
