@@ -28,7 +28,6 @@
             <div class="col-md-7 mx-auto">
                 <div class="main_title">
                     <h2 data-aos="fade-up" data-aos-duration="2000">E Learning ini dibuat untuk menunjang pembelajaran di SMA Negeri 1 Sampit</h2>
-                    <a href="https://github.com/syauqi/learnify"><button data-aos="fade-up" data-aos-duration="2400" class="bubbly-button">Download<span class="lnr lnr-arrow-right"></span></button></a>
                 </div>
             </div>
         </div>

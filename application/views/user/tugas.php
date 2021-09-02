@@ -1,15 +1,4 @@
-<!--
-@Project: Learnify
-@Programmer: Syauqi Zaidan Khairan Khalaf
-@Website: https://linktr.ee/syauqi
-@Email : syaokay@gmail.com
 
-@About-Learnify :
-Web Edukasi Open Source yang dibuat oleh Syauqi Zaidan Khairan Khalaf.
-Learnify adalah Web edukasi yang dilengkapi video, materi dan sistem ujian
-yang tersedia secara gratis. Learnify dibuat ditujukan agar para siswa dan
-guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
--->
 
 <!doctype html>
 <html lang="en">
@@ -25,7 +14,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                             $data['user'] = $this->db->get_where('siswa', ['nis' =>
                             $this->session->userdata('nis')])->row_array();
                             echo $data['user']['nama'];
-                            ?> - Learnify Student Page</title>
+                            ?> - Student Page</title>
     <!-- Bootstrap CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/') ?>css/bootstrap.css">
@@ -57,7 +46,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="#"><img src="<?= base_url('assets/') ?>img/logo.png" alt=""></a>
+                    <a class="navbar-brand logo_h" href="#"><img src="<?= base_url('assets/') ?>img/logo_smansa.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -93,17 +82,16 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
         <div class="bg-white mx-auto p-4 buat-text" data-aos="fade-down" data-aos-duration="1400" style="width: 100%; border-radius:10px;">
             <div class="row" style="color: black; font-family: 'poppins';">
                 <div class="col-md-12 mt-1">
-                    <h1 class="display-4" style="color: black; font-family:'poppins';" data-aos="fade-down" data-aos-duration="1400">Daftar Tugas
-                        di Learnify <span style="font-size: 40px;">👋🏻
+                    <h1 class="display-4" style="color: black; font-family:'poppins';" data-aos="fade-down" data-aos-duration="1400">Daftar Tugas <span style="font-size: 40px;">👋🏻
                         </span> </h1>
-                    <p>Hello Students! , Ini merupakan halaman tugas learnify ! Silahkan pilih tugas yang akan kamu
+                    <p>Hello Students! , Ini merupakan halaman tugas ! Silahkan pilih tugas yang akan kamu
                         akses. Selamat mengerjakan ya students!</p>
                     <hr>
                     <h4 style="line-height: 4px;" data-aos="fade-down" data-aos-duration="1700"><?php
                                                                                                 $data['user'] = $this->db->get_where('siswa', ['nis' =>
                                                                                                 $this->session->userdata('nis')])->row_array();
                                                                                                 echo $data['user']['nama'];
-                                                                                                ?> - Learnify Students</h3>
+                                                                                                ?> -  Students</h3>
                         <p data-aos="fade-down" data-aos-duration="1800">Silahkan pilih tugas yang akan kamu akses
                             dibawah
                             ini!
