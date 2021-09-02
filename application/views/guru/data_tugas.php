@@ -18,7 +18,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
 
 <head>
     <meta charset="utf-8" />
-    <title>Learnify - Tambah Tugas</title>
+    <title>Daftar Tugas</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -112,7 +112,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <!--begin::Layout Skins(used by all pages) -->
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/favicon.png" />
+    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/icon_smansa.png" />
 </head>
 
 <!-- end::Head -->
@@ -128,7 +128,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
             <a href="<?=base_url('guru')?>">
-                <img alt="Logo" src="<?=base_url('assets')?>/img/logo.png" width="90px;" />
+                <img alt="Logo" src="<?=base_url('assets')?>/img/logo_smansa.png" width="90px;" />
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">
@@ -153,7 +153,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                     <div class="kt-aside__brand-logo">
                         <a href="<?=base_url('guru')?>">
-                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/favicon.png" />
+                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/icon_smansa.png" />
                         </a>
                     </div>
                 </div>
@@ -444,12 +444,10 @@ echo $data['user']['nama_guru'];
                 <!-- begin:: Footer -->
                 <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
                 <div class="kt-footer__copyright">
-                                2021&nbsp;&copy;&nbsp;<a href="" target="_blank"
-                                    class="kt-link">Zhika</a>
+                                2021&nbsp;&copy;&nbsp;
                             </div>
-                    <div class="kt-footer__menu">
-                        Made with &nbsp; <span class="" style="color: red"> &#10084;</span> &nbsp; by Syaauqi
-                    </div>
+                    
+                        
                 </div>
 
                 <!-- end:: Footer -->

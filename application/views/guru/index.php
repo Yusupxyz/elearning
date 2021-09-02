@@ -1,15 +1,4 @@
-<!--
-@Project: Learnify
-@Programmer: Syauqi Zaidan Khairan Khalaf
-@Website: https://linktr.ee/syauqi
-@Email : syaokay@gmail.com
 
-@About-Learnify :
-Web Edukasi Open Source yang dibuat oleh Syauqi Zaidan Khairan Khalaf.
-Learnify adalah Web edukasi yang dilengkapi video, materi dan sistem ujian
-yang tersedia secara gratis. Learnify dibuat ditujukan agar para siswa dan
-guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +7,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
 
 <head>
     <meta charset="utf-8" />
-    <title>Learnify - Teacher Page</title>
+    <title>Teacher Page</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -112,7 +101,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <!--begin::Layout Skins(used by all pages) -->
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/favicon.png" />
+    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/icon_smansa.png" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.0/dist/sweetalert2.all.min.js"></script>
 </head>
 
@@ -129,7 +118,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
             <a href="<?=base_url('guru/add_materi')?>">
-                <img alt="Logo" src="<?=base_url('assets')?>/img/logo.png" width="90px;" />
+                <img alt="Logo" src="<?=base_url('assets')?>/img/icon_smansa.png" width="90px;" />
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">
@@ -154,7 +143,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                     <div class="kt-aside__brand-logo">
                         <a href="<?=base_url('guru')?>">
-                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/favicon.png" />
+                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/icon_smansa.png" />
                         </a>
                     </div>
                 </div>
@@ -394,7 +383,7 @@ echo $data['user']['nama_guru'];
                                             </h1>
                                             <div class="kt-widget19__shadow"></div>
                                             <div class="kt-widget19__labels">
-                                                <a href="#" class="btn btn-label-light-o2 btn-bold btn-sm ">Learnify</a>
+                                                <a href="#" class="btn btn-label-light-o2 btn-bold btn-sm ">ELearning SMANSA</a>
                                             </div>
                                         </div>
                                     </div>
@@ -415,11 +404,9 @@ echo $data['user']['nama_guru'];
                                                 </div>
                                             </div>
                                             <div class="kt-widget19__text">
-                                                Selamat datang di halaman guru Learnify, anda dapat menambah materi .
-                                                Dalam materi anda dapat memasukan video, dan deskripsi nya. Seemoga anda
-                                                dapat menikmati Learnify!, kontak Administrator jika terjadi masalah
-                                                apapun yang terkait upload materi. Terima kasih telah menggunakan
-                                                learnify!
+                                                Selamat datang di halaman guru , anda dapat menambah materi .
+                                                Dalam materi anda dapat memasukan video, dan deskripsi nya. Kontak Administrator jika terjadi masalah
+                                                apapun yang terkait upload materi.
                                                 <br>
                                                 Selamat Bekerja :)
                                             </div>
@@ -442,11 +429,7 @@ echo $data['user']['nama_guru'];
                         <!-- begin:: Footer -->
                         <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
                             <div class="kt-footer__copyright">
-                                2021&nbsp;&copy;&nbsp;<a href="" target="_blank"
-                                    class="kt-link">Zhika</a>
-                            </div>
-                            <div class="kt-footer__menu">
-                                Made with &nbsp; <span class="" style="color: red"> &#10084;</span> &nbsp; by Syaauqi
+                                2021&nbsp;&copy;&nbsp;
                             </div>
                         </div>
 
