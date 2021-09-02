@@ -113,7 +113,7 @@ class M_tugas extends CI_Model
         $this->db->join('tugas', 'tugas.id = tugas_kelas.tugas_id','right');
         $this->db->where('nis',$nis);
         $this->db->where('tgl_akhir < now()');
-        $this->db->group_by("tugas.id_mapel");
+        $this->db->group_by("tugas.mapel_id");
         return $this->db->get('siswa');
     }
 
@@ -130,6 +130,24 @@ class M_tugas extends CI_Model
         $this->db->where('nis',$nis);
         // $this->db->where('date(tgl_akhir) >= now()');
         $this->db->where('tampil_siswa','1');
+        $this->db->group_by("tugas.mapel_id");
+        return $this->db->get('siswa');
+    }
+
+    public function tampil_dataNilaibyid($nis)
+    {
+        $this->db->select('*,mapel.nama as mapel,mapel.id as mapel_id, jawaban.id as jawaban, tugas.id as tugas_id');
+        $this->db->join('kelas_siswa', 'kelas_siswa.siswa_id = siswa.id','left');
+        $this->db->join('kelas', 'kelas.id = kelas_siswa.kelas_id','left');
+        $this->db->join('tugas_kelas', 'tugas_kelas.kelas_id = kelas.id','left');
+        $this->db->join('tugas', 'tugas.id = tugas_kelas.tugas_id','right');
+        $this->db->join('mapel', 'mapel.id = tugas.mapel_id','left');
+        $this->db->join('guru', 'guru.nip = tugas.nip','left');
+        $this->db->join('jawaban', 'jawaban.tugas_id = tugas.id','left');
+        $this->db->where('nis',$nis);
+        // $this->db->where('date(tgl_akhir) >= now()');
+        $this->db->where('tampil_siswa','1');
+        $this->db->where('jawaban.id!="null"');
         $this->db->group_by("tugas.mapel_id");
         return $this->db->get('siswa');
     }

@@ -103,4 +103,17 @@ class User extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    //tugas
+    public function nilai()
+    {
+        $this->load->model('m_siswa');
+        $this->load->model('m_tugas');
+        $data['user'] = $this->m_siswa->tampil_databyid($this->session->userdata('nis'))->row();
+            // var_dump($data['user']);
+        $data['nilai'] = $this->m_tugas->tampil_dataNilaibyid($this->session->userdata('nis'))->result();
+        // echo $this->db->last_query();
+        $this->load->view('user/nilai',$data);
+        $this->load->view('template/footer');
+    }
+
 }

@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="<?= base_url('assets/') ?>img/icon_smansa.png" type="image/png">
     <!-- Title -->
-    <title>Selamat datang - <?php
+    <title>Nilai - <?php
                             $data['user'] = $this->db->get_where('siswa', ['nis' =>
                             $this->session->userdata('nis')])->row_array();
                             echo $data['user']['nama'];
@@ -62,8 +63,6 @@
                             </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user') ?>">Beranda</a>
                             </li>
-                            <li class="nav-item active"><a class="nav-link" href="<?= base_url('user/tugas') ?>">Tugas</a>
-                            </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user/nilai') ?>">Nilai</a>
                             </li>
                             <li class=" nav-item "><a class=" nav-link text-danger" href="<?= base_url('welcome/logout') ?>">Log Out</a>
@@ -83,17 +82,17 @@
         <div class="bg-white mx-auto p-4 buat-text" data-aos="fade-down" data-aos-duration="1400" style="width: 100%; border-radius:10px;">
             <div class="row" style="color: black; font-family: 'poppins';">
                 <div class="col-md-12 mt-1">
-                    <h1 class="display-4" style="color: black; font-family:'poppins';" data-aos="fade-down" data-aos-duration="1400">Selamat Datang
-                        di Elearning SMANSA <span style="font-size: 40px;">👋🏻
+                    <h1 class="display-4" style="color: black; font-family:'poppins';" data-aos="fade-down" data-aos-duration="1400">Daftar Nilai <span style="font-size: 40px;">👋🏻
                         </span> </h1>
-                    <p>Hello Students! , Ini merupakan halaman utama ELearning ! Silahkan pilih mata pelajaran yang ingin kamu pelajari. Selamat belajar ya students!</p>
+                    <p>Hello Students! , Ini merupakan halaman nilai ! Silahkan pilih nilai yang akan kamu
+                        akses. Selamat mengerjakan ya students!</p>
                     <hr>
                     <h4 style="line-height: 4px;" data-aos="fade-down" data-aos-duration="1700"><?php
                                                                                                 $data['user'] = $this->db->get_where('siswa', ['nis' =>
                                                                                                 $this->session->userdata('nis')])->row_array();
                                                                                                 echo $data['user']['nama'];
                                                                                                 ?> -  Students</h3>
-                        <p data-aos="fade-down" data-aos-duration="1800">Silahkan pilih kelas yang akan kamu akses
+                        <p data-aos="fade-down" data-aos-duration="1800">Silahkan pilih nilai yang akan kamu akses
                             dibawah
                             ini!
                         </p>
@@ -112,31 +111,22 @@
         <div class="row mt-4 mb-5 justify-content-center">
             <div class="col-md-12">
                 <div class="row">
-                    <?php if ($kelas->kategori_id=='1'){ ?>
-                    <div class="col-sm-4 mb-2 d-flex justify-content-center " data-aos-duration="1900" data-aos="fade-right">
-                        <a href="<?= base_url('user/kelas10') ?>">
-                            <div class="card-kelas text-center">
-                                <img src="<?= base_url('assets/') ?>img/kelas10.png" style="object-fit: cover;" class="card-img-top img-fluid" alt="...">
+                <?php foreach ($nilai as $key => $value) { 
+                    ?>
+
+                <div class="col-md-4 mb-2 d-flex justify-content-center" data-aos-duration="1900" data-aos="fade-right">
+                    <a href="<?= base_url('nilai/generateNilai/'.$value->mapel_id.'/'.$user->kelas_id) ?>">
+                    
+                        <div class="card-kelas">
+                            <img src="<?= base_url('assets/') ?>img/nilai.jpg" class="card-img-top" alt="...">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="text-center" >
+                                <h2 class="text-white bg-dark"><?= $value->mapel ?></h2>
                             </div>
-                        </a>
-                    </div>
-                    <?php }elseif ($kelas->kategori_id=='2'){ ?>
-                    <div class="col-sm-4 mb-2 d-flex justify-content-center " data-aos-duration="1900" data-aos="fade-down">
-                        <a href="<?= base_url('user/kelas11') ?>">
-                            <div class="card-kelas">
-                                <img src="<?= base_url('assets/') ?>img/kelas11.png" class="card-img-top" alt="...">
-                            </div>
-                        </a>
-                    </div>
-                    <?php }elseif ($kelas->kategori_id=='3'){ ?>
-                    <div class="col-sm-4 mb-2 d-flex justify-content-center" data-aos-duration="1900" data-aos="fade-left">
-                        <a href="<?= base_url('user/kelas12') ?>">
-                            <div class="card-kelas">
-                                <img src="<?= base_url('assets/') ?>img/kelas12.png" class="card-img-top" alt="...">
-                            </div>
-                        </a>
-                    </div>
-                    <?php } ?>
+                        </div>
+                    </a>
+                </div>
+                <?php  } ?>
+
                 </div>
             </div>
         </div>
