@@ -369,6 +369,7 @@ echo $data['user']['nama_guru'];
                                     <table id="example" class="table align-items-center table-flush">
                                         <thead class="thead-light">
                                             <tr class="text-center">
+                                                <th scope="col">Nama</th>
                                                 <th scope="col">Tanggal Mengerjakan</th>
                                                 <th scope="col">Durasi</th>
                                                 <th scope="col">Nilai</th>
@@ -378,7 +379,9 @@ echo $data['user']['nama_guru'];
                                         <tbody>
                                                 <tr class="text-center">
 
-      
+                                                <td>
+                                                        <?php echo $jawaban->nama_siswa ?>
+                                                    </td>
                                                     <td>
                                                         <?php echo $jawaban->tanggal_pengerjaan ?>
                                                     </td>

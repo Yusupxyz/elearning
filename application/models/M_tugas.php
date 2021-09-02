@@ -31,7 +31,7 @@ class M_tugas extends CI_Model
 
     public function tampil_jawaban($id)
     {
-        $this->db->select('*, kelas.nama as kelas, jawaban.id as jawaban');
+        $this->db->select('*, kelas.nama as kelas, jawaban.id as jawaban, siswa.nama as nama_siswa');
         $this->db->join('siswa', 'siswa.nis = jawaban.siswa_id','left');
         $this->db->join('kelas_siswa', 'kelas_siswa.siswa_id = siswa.id','left');
         $this->db->join('kelas', 'kelas.id = kelas_siswa.kelas_id','left');
@@ -42,7 +42,7 @@ class M_tugas extends CI_Model
 
     public function tampil_jawabanById($tugas_id,$id)
     {
-        $this->db->select('*, kelas.nama as kelas, jawaban.id as jawaban_id');
+        $this->db->select('*, kelas.nama as kelas, jawaban.id as jawaban_id, siswa.nama as nama_siswa');
         $this->db->join('siswa', 'siswa.nis = jawaban.siswa_id','left');
         $this->db->join('kelas_siswa', 'kelas_siswa.siswa_id = siswa.id','left');
         $this->db->join('kelas', 'kelas.id = kelas_siswa.kelas_id','left');

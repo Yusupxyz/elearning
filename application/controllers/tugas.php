@@ -90,6 +90,6 @@ class Tugas extends CI_Controller
         ];
 
         $this->db->insert('jawaban', $data);
-        // redirect('user/tugas');    
+        redirect('user/tugas');    
     }
 }
