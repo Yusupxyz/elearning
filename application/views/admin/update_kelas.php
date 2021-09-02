@@ -7,9 +7,9 @@
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Update Data Kelas - Learnify</title>
+    <title>Update Data Kelas </title>
     <!-- General CSS Files -->
-    <link rel="icon" href="<?= base_url('assets/') ?>img/Logo-Tutwuri-Handayani..png" type="image/png">
+    <link rel="icon" href="<?= base_url('assets/') ?>img/icon_smansa.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -58,7 +58,7 @@
                     <div class="sidebar-brand text-danger">
                         <div>
                             <a href="<?= base_url('admin') ?>" style="font-size: 30px;font-weight:900;font-family: 'Poppins', sans-serif;" class="text-success text-center"><i style="font-size: 30px;" class="fas fa-graduation-cap"></i> |
-                                Learnify <sup>3</sup> </a>
+                                SMANSA </a>
                         </div>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
