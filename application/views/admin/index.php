@@ -79,8 +79,6 @@
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="<?= base_url('admin/data_guru') ?>">Data Guru</a>
                                 </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/add_guru') ?>">Tambah Data Guru</a>
-                                </li>
                             </ul>
                         </li>
                         <li class="menu-header">Management Kelas</li>
@@ -89,8 +87,6 @@
                                 <span>Kelas</span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="<?= base_url('admin/data_kelas') ?>">Data Kelas</a>
-                                </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/add_kelas') ?>">Tambah Data Kelas</a>
                                 </li>
                             </ul>
                         </li>
@@ -101,33 +97,8 @@
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="<?= base_url('admin/data_mapel') ?>">Data Mapel</a>
                                 </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/add_mapel') ?>">Tambah Mapel</a>
-                                </li>
                             </ul>
                         </li>
-                        <!-- <li class="menu-header">Management Tugas</li>
-                        <li class="nav-item dropdown ">
-                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i>
-                                <span>Tugas</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="<?= base_url('admin/data_tugas') ?>">Data Tugas</a>
-                                </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/tambah_tugas') ?>">Tambah Tugas</a>
-                                </li>
-
-                            </ul>
-                        </li> -->
-                        <!-- <li class="menu-header">Management Materi</li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i>
-                                <span>Materi</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="<?= base_url('admin/data_materi') ?>">Data Materi</a>
-                                </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/tambah_materi') ?>">Tambah Materi</a>
-                                </li>
-                            </ul>
-                        </li> -->
                         <li class="menu-header">About Developer</li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-address-card"></i>

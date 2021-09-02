@@ -97,7 +97,14 @@ Mapel dapat terus belajar dan mengajar dimana saja dan kapan saja.
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="<?= base_url('admin/data_guru') ?>">Data Guru</a>
                                 </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/add_guru') ?>">Tambah Data Guru</a>
+                            </ul>
+                        </li>
+                        <li class="menu-header">Management Kelas</li>
+                        <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-bars"></i>
+                                <span>Kelas</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="<?= base_url('admin/data_kelas') ?>">Data Kelas</a>
                                 </li>
                             </ul>
                         </li>
@@ -107,19 +114,6 @@ Mapel dapat terus belajar dan mengajar dimana saja dan kapan saja.
                                 <span>Mapel</span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="<?= base_url('admin/data_mapel') ?>">Data Mapel</a>
-                                </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/add_mapel') ?>">Tambah Mapel</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-header">Management Materi</li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i>
-                                <span>Materi</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="<?= base_url('admin/data_materi') ?>">Data Materi</a>
-                                </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/tambah_materi') ?>">Tambah Materi</a>
                                 </li>
                             </ul>
                         </li>
@@ -131,9 +125,9 @@ Mapel dapat terus belajar dan mengajar dimana saja dan kapan saja.
                                 <li><a class="nav-link" href="<?= base_url('admin/about_developer') ?>">Tentang
                                         Pembuat</a>
                                 </li>
-                                <li><a class="nav-link" href="<?= base_url('admin/about_learnify') ?>">Tentang
+                                <!-- <li><a class="nav-link" href="<?= base_url('admin/about_learnify') ?>">Tentang
                                         Learnify</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
                 </aside>
