@@ -129,11 +129,11 @@
                         <table style="width: 100%" class="container text-center text-dark">
                             <tbody>
                                 <tr style="border-bottom: 0.5px solid #6c757d;">
-                                    <td><span class="font-weight-bold">Nama :</span></td>
+                                    <td><span class="font-weight-bold">Nama : Fadilla Citra Nimahda Putri</span></td>
                                     <td> </td>
                                 </tr>
                                 <tr style="border-bottom: 0.5px solid #6c757d;">
-                                    <td><span class="font-weight-bold">NIM :</span></td>
+                                    <td><span class="font-weight-bold">NIM : DBC 115 028</span></td>
                                     <td> </td>
                                 </tr>
                                

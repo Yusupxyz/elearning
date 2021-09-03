@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="E-learning ini dibuat ditujukan agar para siswa dan guru dapat terus belajar dan mengajar dimana saja dan kapan saja." name="Description" />
-    <link rel="icon" href="<?= base_url('assets/') ?>img/Logo-Tutwuri-Handayani..png" type="image/png">
+    <link rel="icon" href="<?= base_url('assets/') ?>img/icon_smansa.png" type="image/png">
     <title>ELearning-SMANSA !</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/') ?>css/bootstrap.css">
