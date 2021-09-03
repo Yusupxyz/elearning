@@ -25,7 +25,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-2  col-md-6 col-sm-6">
+            <!-- <div class="col-lg-2  col-md-6 col-sm-6">
                 <div class="single-footer-widget tp_widgets">
                     <h6 class="footer_title">Pelajaran - Materi</h6>
                     <ul class="list">
@@ -36,7 +36,7 @@
                         <li><a href="javaScript:void(0);">Pendidikan Agama Islam</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
     
         </div>
         

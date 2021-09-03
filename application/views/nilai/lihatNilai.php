@@ -20,7 +20,7 @@ guru dapat terus Mengerjakan dan mengajar dimana saja dan kapan saja.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="<?= base_url('assets/') ?>img/icon_smansa.png" type="image/png">
-    <title>Selamat Mengerjakan - <?php
+    <title>Jawaban dan Nilai - <?php
                                 $data['user'] = $this->db->get_where('siswa', ['nis' =>
                                 $this->session->userdata('nis')])->row_array();
                                 echo $data['user']['nama'];
@@ -90,94 +90,106 @@ guru dapat terus Mengerjakan dan mengajar dimana saja dan kapan saja.
 
     <!-- Start Greeting Cards -->
     <div class="container">
-        <div class="bg-white mx-auto p-4 buat-text" data-aos="fade-down" data-aos-duration="1400" style="width: 100%; border-radius:10px;">
-            <div class="row" style="color: black; font-family: 'poppins';">
-                <div class="col-md-6 mt-1 ">
-                    <h1 class="display-4" style="color: black; font-family:'poppins';" data-aos="fade-down" data-aos-duration="1400">Selamat Mengerjakan !
-                    </h1>
-                    <h4 data-aos="fade-down" data-aos-duration="1700"><?php
-                                                                        $data['user'] = $this->db->get_where('siswa', ['nis' =>
-                                                                        $this->session->userdata('nis')])->row_array();
-                                                                        echo $data['user']['nama'];
-                                                                        ?> - Learnify Students</h3>
-                        <p><?= $detail->mapel ?> - Kelas <?= $detail->kelas ?></p>
-                        <hr align="left" width="600;">
-                        <p style="line-height: 3px;">Judul Tugas</p>
-                        <p class="font-weight-bold mt--5">
-                            <?= $detail->judul ?>
+    <div class="row">
+    <?php $data = json_decode($jawaban->jawaban); ?>
+                        <div class="col-md-12">
+                            <div class="bg-white p-4" style="border-radius:3px;box-shadow:rgba(0, 0, 0, 0.03) 0px 4px 8px 0px">
+                            <h3>Nilai</h3>
 
-                        </p>
-                        <p class="font-weight-bold mt--5">
-                            <?= $detail->info ?>
+                                <div class="table-responsive">
+                                    <table id="example" class="table align-items-center table-flush">
+                                        <thead class="thead-light">
+                                            <tr class="text-center">
+                                                <th scope="col">Nama</th>
+                                                <th scope="col">Tanggal Mengerjakan</th>
+                                                <th scope="col">Durasi</th>
+                                                <th scope="col">Nilai</th>
+                                            </tr>
+                                        </thead>
 
-                        </p>
-                        <hr align="left" width="600;">
-                        <p style="line-height: 3px;">Waktu Pengerjaan</p>
-                        <p class="font-weight-bold mt--5">
-                            <?= $detail->durasi ?> menit
+                                        <tbody>
+                                                <tr class="text-center">
 
-                        </p>
-                </div>
-                <div class="col-md-6 mt-1">
-                <div id='timer'></div>
+                                                <td>
+                                                        <?php echo $jawaban->nama_siswa ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $jawaban->tanggal_pengerjaan ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $data->durasi.' menit' ?>
+                                                    </td>
+                                                    <td >
+                                                    <?php echo $jawaban->nilai ?>
+                                                    </td>
+                                                
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- <p class="small font-weight-bold">Sebelum mengupload file, harus terlebih dahulu
+                                    melakukan config max_upload di php.ini</p> -->
+                        </div>
+                            <div class="col-md-12 bg-white p-4 container"
+                                style="border-radius:3px;box-shadow:rgba(0, 0, 0, 0.03) 0px 4px 8px 0px">
+                            
+                                    <div class="form-group">
+                                        <h3>Koreksi Jawaban</h3>
+                                        <div class="table-responsive">
+                                            <table id="example" class="table align-items-center table-flush">
+                                            <thead class="thead-light">
+                                            <tr class="text-center">
+                                                <th scope="col">No.</th>
+                                                <th scope="col">Jawaban</th>
+                                                <th scope="col">Benar/Salah</th>
+                                            </tr>
+                                        </thead>
+                                                <tbody>
+                                                    <?php $i=1;   
+                                                    $array = array_reverse((array) $data->jawaban);
+                                                    $benar=0;
+                                                    $salah=0;
 
-                </div>
-            </div>
-        </div>
-    </div>
+                                                        for ($i=0; $i < count($array); $i++) { ?>
+                                                                                                               
+                                                        <tr class="text-center">
+
+                                                        <td>
+                                                                <?php echo $i+1 ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php echo $array[$i]==null?'-':$array[$i] ?>
+                                                            </td>
+                                                            <td >
+                                                                <?php 
+                                                                    if($array[$i]==$kunci[$i]['pilihan_urutan']){
+                                                                        echo "Benar";
+                                                                        $benar+=1;
+
+                                                                    }else{
+                                                                        echo 'Salah('.$kunci[$i]['pilihan_urutan'].')';
+                                                                        $salah+=1;  
+                                                                    }
+                                                                ?>
+                                                            </td>
+                                                        
+                                                        </tr>
+                                                       
+                                                        <?php } ?>
+                                                        <tr>
+                                                            <td>Total Benar = <?= $benar ?><br>
+                                                            Total Salah = <?= $salah ?></td>
+                                                        </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                  
+                                    <button onclick="window.history.back()" class="btn btn-success">Kembali</button>
+                            </div>
+                        </div>
+    </div></div>
     <!-- End Greeting Cards -->
-
-    <!-- Start Deskripsi Materi -->
-    <div class="container bg-secondary">
-        <div class="row mt-4">
-            <div class="col-md-12 w-150 mb-4">
-    <h3><b>Tugas Pilihan Ganda</b></h3>
-   
-        <div style='width:100%; border: 1px solid #EBEBEB; overflow:scroll;height:700px;'>
-        <table width="100%" border="0">
-
-     
-            <form id="frmSoal"  method="post" action="../jawab/<?= $id ?>">
-            <?php $i=1; echo $_SESSION['mulai'];
- foreach ($pertanyaan as $key => $value) { 
-                $pertanyaan=str_replace("</p>","",str_replace("<p>","",$value->pertanyaan));
-                ?>
-            <tr>
-                  <td width="17"><font color="#000000"><?php echo $i++.'.'; ?></font></td>
-                  <td width="430"><font color="#000000"><?php echo $pertanyaan; ?></font></td>
-            </tr>
-            <?php foreach ($pilihan[$value->tugas_pertanyaan] as $key => $value2) { 
-                $konten=str_replace("</p>","",str_replace("<p>","",$value2->konten));
-                ?>
-            <tr>
-                <td height="21"><font color="#000000">&nbsp;</font></td>
-                <td style="display:inline-block" ><font color="#000000">
-                    <?= $value2->urutan ?>.  <input name="pilihan[<?= $value2->pertanyaan_id ?>]" type="radio" value="<?= $value2->urutan ?>"> 
-                <?= $konten ?></font> </td>
-            </tr>
-           
-            
-            <?php } ?>
-            <input name="pilihan[<?= $value2->pertanyaan_id ?>]" type="radio" value="" checked style="display:none"> 
-
-        <?php }?>
-                
-            <tr>
-                <td>&nbsp;</td>
-                  <td><br>
-                  <!-- <button type="submit" name="submit" id="submit">Submit</button> -->
-
-                  <input class="btn btn-danger" type="submit" value="Simpan" onclick="return confirm('Apakah Anda yakin dengan jawaban Anda?')"></td>
-            </tr>
-            </from>
-            </table>
-</form>
-        </p>
-</div>
-            </div>
-        </div>
-    </div>
-    <!-- End Deskripsi Materi -->
 
 
     <br>

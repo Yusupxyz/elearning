@@ -65,6 +65,8 @@
                             </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user/tugas') ?>">Tugas</a>
                             </li>
+                            <li class="nav-item active"><a class="nav-link" href="<?= base_url('user/nilai') ?>">Nilai</a>
+                            </li>
                             <li class=" nav-item "><a class=" nav-link text-danger" href="<?= base_url('welcome/logout') ?>">Log Out</a>
                             </li>
                             

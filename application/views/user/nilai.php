@@ -63,6 +63,8 @@
                             </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user') ?>">Beranda</a>
                             </li>
+                            <li class="nav-item active"><a class="nav-link" href="<?= base_url('user/tugas') ?>">Tugas</a>
+                            </li>
                             <li class="nav-item active"><a class="nav-link" href="<?= base_url('user/nilai') ?>">Nilai</a>
                             </li>
                             <li class=" nav-item "><a class=" nav-link text-danger" href="<?= base_url('welcome/logout') ?>">Log Out</a>
@@ -115,7 +117,7 @@
                     ?>
 
                 <div class="col-md-4 mb-2 d-flex justify-content-center" data-aos-duration="1900" data-aos="fade-right">
-                    <a href="<?= base_url('nilai/generateNilai/'.$value->mapel_id.'/'.$user->kelas_id) ?>">
+                    <a href="<?= base_url('nilai/lihatNilai/'.$value->mapel_id.'/'.$user->kelas_id) ?>">
                     
                         <div class="card-kelas">
                             <img src="<?= base_url('assets/') ?>img/nilai.jpg" class="card-img-top" alt="...">

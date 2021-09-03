@@ -5,9 +5,9 @@
         </div>
         <!-- <img data-aos="fade-up" data-aos-duration="1800" src="<?= base_url('assets/') ?>img/banner/home-banner.png" alt="" srcset=""> -->
         <div class="container">
-            <div class="banner_content text-center">
-                <h3 data-aos="fade-up" data-aos-duration="1600">Belajar Dimana Saja & Kapan Saja <br /> Mudah Dengan ELearning SMANSA</h3>
-                <p data-aos="fade-up" data-aos-duration="1900">Dengan ELearning SMANSA kemudahan kegiatan belajar mengajar dapat terpenuhi. Para guru dan siswa dapat
+            <div class="banner_content text-center ">
+                <h3 class="text-danger" data-aos="fade-up" data-aos-duration="1600">Belajar Dimana Saja & Kapan Saja <br /> Mudah Dengan ELearning SMANSA</h3>
+                <p class="bg-secondary" data-aos="fade-up" data-aos-duration="1900">Dengan ELearning SMANSA kemudahan kegiatan belajar mengajar dapat terpenuhi. Para guru dan siswa dapat
                     belajar meski banyak halangan atau rintangan. </p>
             
             </div>
@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-7 mx-auto">
                 <div class="main_title">
-                    <h2 data-aos="fade-up" data-aos-duration="2000">E Learning ini dibuat untuk menunjang pembelajaran di SMA Negeri 1 Sampit</h2>
+                    <h2 data-aos="fade-up " data-aos-duration="2000">E Learning ini dibuat untuk menunjang pembelajaran di SMA Negeri 1 Sampit</h2>
                 </div>
             </div>
         </div>
@@ -53,8 +53,8 @@
                                     <h4>Matematika </h4>
                                 </a>
                                 <ul class="list">
-                                    <li><a href="#"><i class="lnr lnr-users"></i>54</a></li>
-                                    <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
+                                    <!-- <li><a href="#"><i class="lnr lnr-users"></i>54</a></li>
+                                    <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li> -->
                                     <li><a href="#"><i class="lnr lnr-user"></i>Guru Matematika SMAN 1 Sampit</a>
                                     </li>
                                 </ul>
@@ -70,8 +70,8 @@
                                     <h4>IPA </h4>
                                 </a>
                                 <ul class="list">
-                                    <li><a href="#"><i class="lnr lnr-users"></i> 34</a></li>
-                                    <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
+                                    <!-- <li><a href="#"><i class="lnr lnr-users"></i> 34</a></li>
+                                    <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li> -->
                                     <li><a href="#"><i class="lnr lnr-user"></i> Guru IPA SMAN 1 Sampit</a></li>
                                 </ul>
                             </div>
@@ -86,8 +86,8 @@
                                     <h4>Bahasa Inggris </h4>
                                 </a>
                                 <ul class="list">
-                                    <li><a href="#"><i class="lnr lnr-users"></i> 63</a></li>
-                                    <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
+                                    <!-- <li><a href="#"><i class="lnr lnr-users"></i> 63</a></li>
+                                    <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li> -->
                                     <li><a href="#"><i class="lnr lnr-user"></i> Guru English SMAN 1 Sampit</a></li>
                                 </ul>
                             </div>
@@ -102,8 +102,8 @@
                                     <h4>Bahasa Indonesia</h4>
                                 </a>
                                 <ul class="list">
-                                    <li><a href="#"><i class="lnr lnr-users"></i> 24</a></li>
-                                    <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
+                                    <!-- <li><a href="#"><i class="lnr lnr-users"></i> 24</a></li>
+                                    <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li> -->
                                     <li><a href="#"><i class="lnr lnr-user"></i> Guru Indonesia SMAN 1 Sampit</a>
                                     </li>
                                 </ul>
@@ -121,8 +121,8 @@
                             <h4>Agama Islam</h4>
                         </a>
                         <ul class="list">
-                            <li><a href="#"><i class="lnr lnr-users"></i> 35</a></li>
-                            <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
+                            <!-- <li><a href="#"><i class="lnr lnr-users"></i> 35</a></li>
+                            <li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li> -->
                             <li><a href="#"><i class="lnr lnr-user"></i> Guru Agama SMAN 1 Sampit</a></li>
                         </ul>
                     </div>
