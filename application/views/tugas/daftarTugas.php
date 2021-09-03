@@ -1,15 +1,4 @@
-<!--
-@Project: Learnify
-@Programmer: Syauqi Zaidan Khairan Khalaf
-@Website: https://linktr.ee/syauqi
-@nis : syaokay@gmail.com
 
-@About-Learnify :
-Web Edukasi Open Source yang dibuat oleh Syauqi Zaidan Khairan Khalaf.
-Learnify adalah Web edukasi yang dilengkapi video, tugas dan sistem ujian
-yang tersedia secara gratis. Learnify dibuat ditujukan agar para siswa dan
-guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
--->
 
 <!doctype html>
 <html lang="en">
@@ -20,7 +9,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="<?= base_url('assets/') ?>img/icon_smansa.png" type="image/png">
-    <title>Matematika | Kelas X - Learnify</title>
+    <title>Matematika | Kelas X </title>
     <!-- Bootstrap CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/') ?>css/bootstrap.css">
@@ -96,7 +85,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                                                                         $data['user'] = $this->db->get_where('siswa', ['nis' =>
                                                                         $this->session->userdata('nis')])->row_array();
                                                                         echo $data['user']['nama'];
-                                                                        ?> - Learnify Students</h4>
+                                                                        ?> - Students</h4>
                     <p>Matematika - Kelas X</p>
                     <hr width="80%">
                     <p data-aos="fade-down" class="font-weight-bold" data-aos-duration="1800">Silahkan pilih tugas yang
