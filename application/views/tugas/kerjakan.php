@@ -1,15 +1,3 @@
-<!--
-@Project: Learnify
-@Programmer: Syauqi Zaidan Khairan Khalaf
-@Website: https://linktr.ee/syauqi
-@nis : syaokay@gmail.com
-
-@About-Learnify :
-Web Edukasi Open Source yang dibuat oleh Syauqi Zaidan Khairan Khalaf.
-Learnify adalah Web edukasi yang dilengkapi video, materi dan sistem ujian
-yang tersedia secara gratis. Learnify dibuat ditujukan agar para siswa dan
-guru dapat terus Mengerjakan dan mengajar dimana saja dan kapan saja.
--->
 
 <!doctype html>
 <html lang="en">
@@ -99,7 +87,7 @@ guru dapat terus Mengerjakan dan mengajar dimana saja dan kapan saja.
                                                                         $data['user'] = $this->db->get_where('siswa', ['nis' =>
                                                                         $this->session->userdata('nis')])->row_array();
                                                                         echo $data['user']['nama'];
-                                                                        ?> - Learnify Students</h3>
+                                                                        ?> - Students</h3>
                         <p><?= $detail->mapel ?> - Kelas <?= $detail->kelas ?></p>
                         <hr align="left" width="600;">
                         <p style="line-height: 3px;">Judul Tugas</p>
