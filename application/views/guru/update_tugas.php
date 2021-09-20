@@ -1,15 +1,4 @@
-<!--
-@Project: Learnify
-@Programmer: Syauqi Zaidan Khairan Khalaf
-@Website: https://linktr.ee/syauqi
-@Email : syaokay@gmail.com
 
-@About-Learnify :
-Web Edukasi Open Source yang dibuat oleh Syauqi Zaidan Khairan Khalaf.
-Learnify adalah Web edukasi yang dilengkapi video, Soal dan sistem ujian
-yang tersedia secara gratis. Learnify dibuat ditujukan agar para siswa dan
-guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +7,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
 
 <head>
     <meta charset="utf-8" />
-    <title>Learnify - Update Soal</title>
+    <title>Update Soal</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -112,7 +101,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <!--begin::Layout Skins(used by all pages) -->
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/favicon.png" />
+    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/icon_smansa.png" />
 </head>
 
 <!-- end::Head -->
@@ -128,7 +117,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
             <a href="<?=base_url('guru')?>">
-                <img alt="Logo" src="<?=base_url('assets')?>/img/logo.png" width="90px;" />
+                <img alt="Logo" src="<?=base_url('assets')?>/img/logo_smansa.png" width="90px;" />
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">

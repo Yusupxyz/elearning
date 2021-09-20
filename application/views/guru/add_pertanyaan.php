@@ -1,15 +1,4 @@
-<!--
-@Project: Learnify
-@Programmer: Syauqi Zaidan Khairan Khalaf
-@Website: https://linktr.ee/syauqi
-@Email : syaokay@gmail.com
 
-@About-Learnify :
-Web Edukasi Open Source yang dibuat oleh Syauqi Zaidan Khairan Khalaf.
-Learnify adalah Web edukasi yang dilengkapi video, materi dan sistem ujian
-yang tersedia secara gratis. Learnify dibuat ditujukan agar para siswa dan
-guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +7,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
 
 <head>
     <meta charset="utf-8" />
-    <title>Learnify - Tambah Pertanyaan</title>
+    <title>Tambah Pertanyaan</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -112,7 +101,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <!--begin::Layout Skins(used by all pages) -->
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/favicon.png" />
+    <link rel="shortcut icon" href="<?=base_url('assets')?>/img/icon_smansa.png" />
 </head>
 
 <!-- end::Head -->
