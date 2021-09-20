@@ -142,7 +142,7 @@
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                     <div class="kt-aside__brand-logo">
                         <a href="<?=base_url('guru')?>">
-                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/favicon.png" />
+                            <img alt="Logo" width="35px;" src="<?=base_url('assets')?>/img/icon_smansa.png" />
                         </a>
                     </div>
                 </div>
@@ -418,12 +418,9 @@ echo $data['user']['nama_guru'];
                 <!-- begin:: Footer -->
                 <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
                 <div class="kt-footer__copyright">
-                                2021&nbsp;&copy;&nbsp;<a href="" target="_blank"
-                                    class="kt-link">Zhika</a>
+                                2021&nbsp;&copy;&nbsp;
                             </div>
-                    <div class="kt-footer__menu">
-                        Made with &nbsp; <span class="" style="color: red"> &#10084;</span> &nbsp; by Syaauqi
-                    </div>
+                    
                 </div>
 
                 <!-- end:: Footer -->
