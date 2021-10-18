@@ -532,4 +532,98 @@ class Admin extends CI_Controller
         redirect('admin/data_kelas');
     }
 
+    //manajemen kategori kelas
+
+    public function data_kategori_kelas()
+    {
+        $this->load->model('m_kategori_kelas');
+
+        $data['user'] = $this->db->get_where('admin', ['email' =>
+            $this->session->userdata('email')])->row_array();
+
+        $data['user'] = $this->m_kategori_kelas->get_category()->result();
+        $this->load->view('admin/data_kategori_kelas', $data);
+    }
+
+    public function add_kategori_kelas()
+    {
+        $this->load->model('m_kelas');
+        $this->load->model('m_mapel');
+
+        $this->form_validation->set_rules('nama', 'Kategori Kelas', 'required|trim|min_length[1]', [
+            'required' => 'Harap isi kolom nama.',
+            'min_length' => 'deskripsi terlalu pendek.',
+        ]);
+        if ($this->form_validation->run() == false) {
+            $data['user'] = $this->m_mapel->tampil_data()->result();  
+            $this->load->view('admin/add_kategori_kelas',$data);
+        } else {
+            $mapel=$this->input->post('mapel', true);
+            // var_dump($this->input->post('mapel', true));
+            $data = [
+                'kategori' => htmlspecialchars($this->input->post('nama', true))
+            ];
+
+            $this->db->insert('kelas_kategori', $data);
+            $id= $this->db->insert_id();
+            for ($i=0; $i < count($mapel); $i++) { 
+                $data = [
+                    'id_kelas' => $id,
+                    'id_mapel' => $mapel[$i]
+                ];
+                $this->db->insert('kelas_mapel', $data);
+            }
+
+            $this->session->set_flashdata('success-reg', 'Berhasil!');
+            redirect(base_url('admin/data_kategori_kelas'));
+        }
+    }
+
+    public function update_kategori_kelas($id)
+    {
+        $this->load->model('m_kategori_kelas');
+        $this->load->model('m_mapel');
+        $where = array('id' => $id);
+        $data['user'] = $this->m_kategori_kelas->update_kategori($where, 'kelas_kategori')->result();
+        $data['mapel'] = $this->m_mapel->tampil_data()->result();  
+        $where = array('id_kelas' => $id);
+        $mapel_kategori = $this->m_kategori_kelas->update_kategori($where, 'kelas_mapel')->result(); 
+        foreach ($mapel_kategori as $key => $value) {
+            $x[]=$value->id_mapel;
+        }
+        $data['kapel']=$x;
+        $this->load->view('admin/update_kategori_kelas', $data);
+    }
+
+    public function kelas_kategori_edit()
+    {
+        $this->load->model('m_kategori_kelas');
+        $id = $this->input->post('id');
+        $nama = $this->input->post('nama');
+        $mapel=$this->input->post('mapel', true);
+
+        $data = array(
+            'kategori' => $nama,
+
+        );
+
+        $where = array(
+            'id' => $id,
+        );
+
+        $this->m_kategori_kelas->update_data($where, $data, 'kelas_kategori');
+
+        $where = array('id_kelas' => $id);
+        $this->m_kategori_kelas->delete($where, 'kelas_mapel');
+        for ($i=0; $i < count($mapel); $i++) { 
+            $data = [
+                'id_kelas' => $id,
+                'id_mapel' => $mapel[$i]
+            ];
+            $this->db->insert('kelas_mapel', $data);
+        }
+        $this->session->set_flashdata('success-edit', 'berhasil');
+        redirect('admin/data_kategori_kelas');
+    }
+
 }

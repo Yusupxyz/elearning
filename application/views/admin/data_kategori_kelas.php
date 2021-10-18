@@ -129,11 +129,11 @@
                 <section class="section">
                     <div class="card" style="width:100%;">
                         <div class="card-body">
-                            <h2 class="card-title" style="color: black;">Management Data Kelas </h2>
+                            <h2 class="card-title" style="color: black;">Management Data Kategori Kelas </h2>
                             <hr>
                             <!-- <p class="card-text"> After I ran into Helen at a restaurant, I realized she was just office pretty drop-dead date put in in a deck for our standup today. Who's responsible for the ask for this request? who's responsible for the ask for this request? but moving the goalposts gain traction. </p> -->
-                            <a href="<?= base_url('admin/add_kelas') ?>" class="btn btn-success">Tambah
-                                Data Kelas ⭢</a>
+                            <a href="<?= base_url('admin/add_kategori_kelas') ?>" class="btn btn-success">Tambah
+                                Data Kategori Kelas ⭢</a>
                         </div>
                     </div>
                     <div class="row">
@@ -144,8 +144,7 @@
                                         <thead class="thead-light">
                                             <tr class="text-center">
                                                 <th scope="col">No.</th>
-                                                <th scope="col">Nama Kelas</th>
-                                                <th scope="col">Status</th>
+                                                <th scope="col">Kategori</th>
                                                 <th scope="col">Option</th>
                                             </tr>
                                         </thead>
@@ -162,17 +161,14 @@
                                                     </th>
 
                                                     <td>
-                                                        <?php echo $u->nama ?>
+                                                        <?php echo $u->kategori ?>
                                                     </td>
 
-                                                    <td>
-                                                        <?php echo $u->aktif=='1'?'Aktif':'Tidak Aktif'; ?>
-                                                    </td>
 
                                                     <td class="text-center">
-                                                        <a href="<?php echo site_url('admin/update_kelas/' . $u->id); ?>" class="btn btn-info">Update ⭢</a>
+                                                        <a href="<?php echo site_url('admin/update_kategori_kelas/' . $u->id); ?>" class="btn btn-info">Update ⭢</a>
 
-                                                        <a href="<?php echo site_url('admin/delete_kelas/' . $u->id); ?>" class="btn btn-danger remove">Delete ✖</a>
+                                                        <!-- <a href="<?php echo site_url('admin/delete_kategori_kelas/' . $u->id); ?>" class="btn btn-danger remove">Delete ✖</a> -->
                                                     </td>
 
                                                 </tr>

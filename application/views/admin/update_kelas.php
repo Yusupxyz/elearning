@@ -143,7 +143,7 @@
                     <div class="card card-success">
                         <div class="col-md-12 text-center">
                             <p class="registration-title font-weight-bold display-4 mt-4" style="color:black; font-size: 50px;">
-                                Update Data Mata Pelajaran</p>
+                                Update Data Kelas</p>
                             <p style="line-height:-30px;margin-top:-20px;">Silahkan isi data data yang ingin diubah
                                 dibawah </p>
                             <hr>
