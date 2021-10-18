@@ -20,6 +20,13 @@ class M_siswa extends CI_Model
         return $this->db->get('siswa');
     }
 
+    public function cek_id($nis)
+    {
+        $this->db->select('count(*) as count');
+        $this->db->where('nis',$nis);
+        return $this->db->get('siswa');
+    }
+
     public function detail_siswa($id = null)
     {
         $query = $this->db->get_where('siswa', array('id' => $id))->row();

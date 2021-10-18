@@ -27,6 +27,9 @@ Siswa dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.0/dist/sweetalert2.all.min.js"></script>
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/') ?>stisla-assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url('assets/') ?>stisla-assets/css/components.css">
@@ -228,7 +231,17 @@ Siswa dapat terus belajar dan mengajar dimana saja dan kapan saja.
         </div>
     </div>
     <!-- End Main Content -->
-
+    <?php if ($this->session->flashdata('gagal')) : ?>
+        <script>
+            Swal.fire({
+                icon: 'danger',
+                title: 'Gagal!',
+                text: 'NIS sudah terdaftar!',
+                showConfirmButton: false,
+                timer: 2500
+            })
+        </script>
+    <?php endif; ?>
 
     <!-- Start Footer -->
     <footer class="main-footer">
@@ -266,6 +279,8 @@ Siswa dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <script src="<?= base_url('assets/') ?>stisla-assets/js/scripts.js"></script>
     <script src="<?= base_url('assets/') ?>stisla-assets/js/custom.js"></script>
     <!-- Page Specific JS File -->
+
+
 </body>
 
 </html>

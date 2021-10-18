@@ -135,13 +135,14 @@ class Admin extends CI_Controller
     {
         $this->load->model('m_kelas');
 
+        $this->load->model('m_siswa');
         $this->form_validation->set_rules('nis', 'NIS', 'required|trim|min_length[1]', [
             'required' => 'Harap isi kolom NIS.',
             'min_length' => 'NIS terlalu pendek.',
         ]);
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim|min_length[2]', [
-            'required' => 'Harap isi kolom nAMA.',
+            'required' => 'Harap isi kolom nama.',
             'min_length' => 'Nama terlalu pendek.',
         ]);
 
@@ -158,23 +159,29 @@ class Admin extends CI_Controller
             $data['kelas'] = $this->m_kelas->tampil_data()->result();
             $this->load->view('user/regis', $data);
         } else {
-            $data = [
-                'nis' => htmlspecialchars($this->input->post('nis', true)),
-                'nama' => htmlspecialchars($this->input->post('nama', true)),
-                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-            ];
-
-            $this->db->insert('siswa', $data);
-
-            $data = [
-                'kelas_id' => htmlspecialchars($this->input->post('kelas', true)),
-                'siswa_id' => $this->db->insert_id()
-            ];
-
-            $this->db->insert('kelas_siswa', $data);
-
-            $this->session->set_flashdata('success-reg', 'Berhasil!');
-            redirect(base_url('admin/data_siswa'));
+            if ($this->m_siswa->cek_id(htmlspecialchars($this->input->post('nis', true)))->row()->count != 0) {
+                $this->session->set_flashdata('gagal', 'Gagal!');
+                $data['kelas'] = $this->m_kelas->tampil_data()->result();
+                $this->load->view('user/regis', $data);
+            }else{
+                $data = [
+                    'nis' => htmlspecialchars($this->input->post('nis', true)),
+                    'nama' => htmlspecialchars($this->input->post('nama', true)),
+                    'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                ];
+    
+                $this->db->insert('siswa', $data);
+    
+                $data = [
+                    'kelas_id' => htmlspecialchars($this->input->post('kelas', true)),
+                    'siswa_id' => $this->db->insert_id()
+                ];
+    
+                $this->db->insert('kelas_siswa', $data);
+    
+                $this->session->set_flashdata('success-reg', 'Berhasil!');
+                redirect(base_url('admin/data_siswa'));
+            }
         }
     }
 
