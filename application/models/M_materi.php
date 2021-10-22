@@ -52,6 +52,8 @@ class M_materi extends CI_Model
 
     public function data($mapel,$kelas)
     {
+        $this->db->select('*');
+        $this->db->join('mapel', 'mapel.id = materi.nama_mapel','left');
         $this->db->where('kelas', $kelas);
         $this->db->where('nama_mapel', $mapel);
         return $this->db->get('materi');

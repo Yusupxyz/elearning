@@ -121,11 +121,11 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
             <?php foreach ($mapel as $key => $value) { ?>
 
                 <div class="col-md-4 mb-2 d-flex justify-content-center" data-aos-duration="1900" data-aos="fade-right">
-                    <a href="<?= base_url('materi/generateMateri/'.$value->id.'/1') ?>">
+                    <a href="<?= base_url('materi/generateMateri/'.$value->id_mapel.'/1') ?>">
                     
                         <div class="card-kelas">
                             <img src="<?= base_url('assets/') ?>img/elearning.jpg" class="card-img-top" alt="...">
-                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="text-white bg-dark"><h2><?= $value->nama ?></h2></div>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="text-white bg-dark"><h2><?= $value->nama_mapel ?></h2></div>
 
                         </div>
                     </a>

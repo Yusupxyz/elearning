@@ -20,7 +20,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="<?= base_url('assets/') ?>img/favicon.png" type="image/png">
-    <title>Matematika | Kelas X - Learnify</title>
+    <title><?= $mapel->nama ?> | Kelas X - Learnify</title>
     <!-- Bootstrap CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/') ?>css/bootstrap.css">
@@ -97,7 +97,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                                                                         $this->session->userdata('nis')])->row_array();
                                                                         echo $data['user']['nama'];
                                                                         ?> - Learnify Students</h4>
-                    <p>Matematika - Kelas X</p>
+                    <p><?= $mapel->nama ?> - Kelas X</p>
                     <hr width="80%">
                     <p data-aos="fade-down" class="font-weight-bold" data-aos-duration="1800">Silahkan pilih materi yang
                         akan kamu akses
