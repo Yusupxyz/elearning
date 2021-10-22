@@ -18,7 +18,7 @@ class Materi extends CI_Controller
     
         $data['materi'] = $this->m_materi->data($materi,$kelas)->result();
         $data['mapel'] = $this->m_mapel->tampil_data_byId($materi)->row();
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
         $this->load->model('m_siswa');
         $data['user'] = $this->m_siswa->tampil_databyid($this->session->userdata('nis'))->row();
         $this->load->view('materi/matematika-x', $data);

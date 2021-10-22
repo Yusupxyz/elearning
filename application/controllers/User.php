@@ -30,7 +30,7 @@ class User extends CI_Controller
             $this->session->userdata('nis')])->row_array();
         // $data['mapel'] = $this->m_mapel->tampil_data()->result();
         $data['mapel'] = $this->m_mapel->tampil_data_kelas($this->session->userdata('nis'))->result();
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
         $this->load->view('user/kelas10',$data);
         $this->load->view('template/footer');
     }
