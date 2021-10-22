@@ -38,7 +38,9 @@ class Guru extends CI_Controller
         if ($this->form_validation->run() == false) {
 
             $data['user'] = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row();
-            $data['kelas'] = $this->m_kelas->tampil_data()->result();
+            $id = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row()->id;
+            $data['kelas'] = $this->m_kelas->tampil_data_by_id($id)->result();
+            // echo $this->db->last_query();
             $this->load->view('guru/add_materi',$data);
         } else {
             $upload_video = $_FILES['video'];
@@ -167,8 +169,9 @@ class Guru extends CI_Controller
             'min_length' => 'deskripsi terlalu pendek.',
         ]);
         if ($this->form_validation->run() == false) {
-            $data['kelas'] = $this->m_kelas->tampil_data()->result();
             $data['user'] = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row();
+            $id = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row()->id;
+            $data['kelas'] = $this->m_kelas->tampil_data_by_id($id)->result();
             $this->load->view('guru/add_tugas',$data);
         } else {
             $data = [
