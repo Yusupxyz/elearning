@@ -588,6 +588,7 @@ class Admin extends CI_Controller
         $data['mapel'] = $this->m_mapel->tampil_data()->result();  
         $where = array('id_kelas' => $id);
         $mapel_kategori = $this->m_kategori_kelas->update_kategori($where, 'kelas_mapel')->result(); 
+        $x=array();
         foreach ($mapel_kategori as $key => $value) {
             $x[]=$value->id_mapel;
         }
