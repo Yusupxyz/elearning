@@ -106,6 +106,8 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="<?= base_url('admin/data_kelas') ?>">Data Kelas</a>
                                 </li>
+                                <li><a class="nav-link" href="<?= base_url('admin/data_kategori_kelas') ?>">Data Kategori Kelas</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="menu-header">Management Mata Pelajaran</li>

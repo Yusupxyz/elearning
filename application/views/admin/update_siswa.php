@@ -76,6 +76,8 @@
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="<?= base_url('admin/data_siswa') ?>">Data Siswa</a></li>
                             </ul>
+                                <li><a class="nav-link" href="<?= base_url('admin/data_kategori_kelas') ?>">Data Kategori Kelas</a>
+                                </li>
                         </li>
                         <li class="menu-header">Management Guru</li>
                         <li class="nav-item dropdown">
