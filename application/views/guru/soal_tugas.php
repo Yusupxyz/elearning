@@ -350,7 +350,7 @@ echo $data['user']['nama_guru'];
                         <?= $tugas->judul ?>
                     </div>
                     <div class="btn-group">
-                        <a href="../tambah_soal/<?= $tugas->id ?>" class="btn btn-primary iframe-pertanyaan cboxElement" title="Tambah Pertanyaan">Tambah Pertanyaan</a>
+                        <a href="../tambah_soal/<?= $tugas->tugas ?>" class="btn btn-primary iframe-pertanyaan cboxElement" title="Tambah Pertanyaan">Tambah Pertanyaan</a>
                     </div>
                         <!--Begin::Dashboard 7-->
 
