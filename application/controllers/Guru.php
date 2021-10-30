@@ -172,6 +172,7 @@ class Guru extends CI_Controller
             $data['user'] = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row();
             $id = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row()->id;
             $data['kelas'] = $this->m_kelas->tampil_data_by_id($id)->result();
+            // echo $this->db->last_query();
             $this->load->view('guru/add_tugas',$data);
         } else {
             $data = [

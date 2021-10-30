@@ -393,7 +393,7 @@ echo $data['user']['nama_guru'];?>" class="form-control" id="inputEmail4">
                                         <select required id="inputState" name="kelas" class="form-control">
                                         <option value="">-- Pilih Kelas --</option>
                                             <?php foreach($kelas as $row):?>
-                                            <option value="<?php echo $row->id;?>"><?php echo $row->nama;?></option>
+                                            <option value="<?php echo $row->kelas;?>"><?php echo $row->nama;?></option>
                                             <?php endforeach;?>
                                         </select>
                                     </div>

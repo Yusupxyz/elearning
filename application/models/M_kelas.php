@@ -9,7 +9,7 @@ class M_kelas extends CI_Model
 
     public function tampil_data_by_id($id)
     {
-        $this->db->select('*');
+        $this->db->select('*,kelas.id as kelas');
         $this->db->join('kelas_kategori', 'kelas.kategori_id = kelas_kategori.id','left');
         $this->db->join('kelas_mapel', 'kelas_kategori.id = kelas_mapel.id_kelas','left');
         $this->db->where('id_mapel',$id);

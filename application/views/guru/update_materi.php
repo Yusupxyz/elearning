@@ -243,6 +243,9 @@
                                         </ul>
                                     </div>
                                 </li>
+                                <li class="kt-menu__item  kt-menu__item " aria-haspopup="true"><a
+                                        href="<?=base_url('guru/evaluasi')?>" class="kt-menu__link "><span
+                                            class="kt-menu__link-text">Evaluasi</span></a></li>
                             </ul>
                         </div>
                     </div>
