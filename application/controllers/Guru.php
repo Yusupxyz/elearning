@@ -615,18 +615,26 @@ class Guru extends CI_Controller
             $this->session->userdata('email')])->row_array();
         $data['user'] = $this->m_tugas->tampil_kelas($this->db->get_where('guru', ['email' =>
         $this->session->userdata('email')])->row()->nip)->result();
-        // echo $this->db->last_query();
+        echo $this->db->last_query();
         $this->load->view('guru/evaluasi', $data);
     }
 
-    public function evaluasi_kelas($id)
+    public function evaluasi_kelas($id,$nip)
     {
+        $this->load->model('m_siswa');
         $this->load->model('m_tugas');
 
         $data['user'] = $this->db->get_where('guru', ['email' =>
             $this->session->userdata('email')])->row_array();
-        $data['user'] = $this->m_tugas->tampil_kelas($id)->result();
-        // echo $this->db->last_query();
+        $siswa = $this->m_siswa->tampil_databyKelas($id,$nip)->result();
+
+        foreach ($siswa as $key => $value) {
+           $x[$value->id] = $this->m_tugas->tampil_rata($id,$nip,$value->nis)->row()->nilai;
+        }        
+       $data['data']=$x;
+       $data['siswa']=$siswa;
+       var_dump($data['data']);
+
         $this->load->view('guru/evaluasi_kelas', $data);
     }
 }

@@ -162,6 +162,16 @@ class M_tugas extends CI_Model
         return $this->db->get('siswa');
     }
 
+    public function tampil_rata($tugas,$nip,$siswa)
+    {
+        $this->db->select('AVG(nilai) as nilai');
+        $this->db->join('tugas', 'tugas.id = jawaban.tugas_id','left');
+        $this->db->where('jawaban.tugas_id',$tugas);
+        $this->db->where('tugas.nip',$nip);
+        $this->db->where('jawaban.siswa_id',$siswa);
+        return $this->db->get('jawaban');
+    }
+
     public function data($tugas,$kelas,$id)
     {
         $this->db->select('*,tugas.id as tugas');

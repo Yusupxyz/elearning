@@ -20,6 +20,14 @@ class M_siswa extends CI_Model
         return $this->db->get('siswa');
     }
 
+    public function tampil_databyKelas($kelas)
+    {
+        $this->db->select('*');
+        $this->db->join('kelas_siswa', 'kelas_siswa.siswa_id = siswa.id','left');
+        $this->db->where('kelas_id',$kelas);
+        return $this->db->get('siswa');
+    }
+
     public function cek_id($nis)
     {
         $this->db->select('count(*) as count');

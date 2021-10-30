@@ -357,7 +357,20 @@ echo $data['user']['nama_guru'];
                         <div class="row">
                         <div class="col-md-12">
                             <div class="bg-white p-4" style="border-radius:3px;box-shadow:rgba(0, 0, 0, 0.03) 0px 4px 8px 0px">
-                                <div class="table-responsive">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                    <div id="columnchart" style="width: 600px; height: 400px;"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                    <div id="columnchart2" style="width: 600px; height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="table-responsive">
                                     <table id="example" class="table align-items-center table-flush">
                                         <thead class="thead-light">
                                             <tr class="text-center">
@@ -630,6 +643,7 @@ echo $data['user']['nama_guru'];
     <!--end::Page Scripts -->
 
     <!--begin::Global App Bundle(used by all pages) -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="<?=base_url('assets')?>/assets/app/bundle/app.bundle.js" type="text/javascript">
     </script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
@@ -638,6 +652,30 @@ echo $data['user']['nama_guru'];
         $(document).ready(function() {
             $('#example').DataTable();
         });
+    </script>
+     <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+                    ['Siswa', 'Rata-rata Nilai Tugas'],
+                    <?php
+                    foreach ($siswa as $key => $value) {
+                        echo "['".$value->nama."', ".$data[$value->id]."],";
+                    }
+                    ?>
+ 
+        ]);
+ 
+        var options = {
+          title: 'Grafik Perbandingan Rata-rata Nilai Siswa'
+        };
+ 
+        var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+        chart.draw(data, options);
+        var chart2 = new google.visualization.ColumnChart(document.getElementById('columnchart2'));
+        chart2.draw(data, options);
+      }
     </script>
     <!--end::Global App Bundle -->
 </body>
