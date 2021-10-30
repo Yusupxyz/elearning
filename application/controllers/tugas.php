@@ -15,9 +15,10 @@ class Tugas extends CI_Controller
 
     }
 
-    function generateTugas($tugas,$kelas){
+    function generateTugas($mapel,$kelas,$id,$tugas_id){
     
-        $data['tugas'] = $this->m_tugas->data($tugas,$kelas)->result();
+        $data['tugas'] = $this->m_tugas->data($mapel,$kelas,$id)->result();
+        $data['cekJawaban'] = $this->m_tugas->jawaban($tugas_id,$id)->row();
         // echo $this->db->last_query();
 
         $data['user'] = $this->m_tugas->tampil_databyid($this->session->userdata('nis'))->row();

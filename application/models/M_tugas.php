@@ -24,6 +24,16 @@ class M_tugas extends CI_Model
         return $this->db->get('tugas');
     }
 
+    public function tampil_kelas($nip)
+    {
+        $this->db->select('*, mapel.nama as mapel, kelas.nama as kelas');
+        $this->db->join('tugas_kelas', 'tugas_kelas.tugas_id = tugas.id','left');
+        $this->db->join('kelas', 'tugas_kelas.kelas_id = kelas.id','left');
+        $this->db->join('mapel', 'mapel.id = tugas.mapel_id','left');
+        $this->db->where('nip',$nip);
+        return $this->db->get('tugas');
+    }
+
     public function tampil_soal($id)
     {
         $this->db->select('*,tugas_pertanyaan.id as pertanyaan_id');
@@ -152,15 +162,22 @@ class M_tugas extends CI_Model
         return $this->db->get('siswa');
     }
 
-    public function data($tugas,$kelas)
+    public function data($tugas,$kelas,$id)
     {
         $this->db->select('*,tugas.id as tugas');
         $this->db->join('tugas_kelas', 'tugas_kelas.tugas_id = tugas.id','left');
-        $this->db->join('jawaban', 'jawaban.tugas_id = tugas.id','left');
         $this->db->join('guru', 'guru.nip = tugas.nip','left');
         $this->db->where('kelas_id', $kelas);
         $this->db->where('mapel_id', $tugas);
         return $this->db->get('tugas');
+    }
+
+    public function jawaban($tugas,$id)
+    {
+        $this->db->select('*');
+        $this->db->where('tugas_id', $tugas);
+        $this->db->where('siswa_id', $id);
+        return $this->db->get('jawaban');
     }
 
     public function kerjakan($id = null)

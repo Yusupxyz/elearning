@@ -469,6 +469,7 @@ class Guru extends CI_Controller
             $this->session->userdata('email')])->row_array();
         $data['tugas'] = $this->m_tugas->tampil_data_byid($id)->row();
         $data['jawaban'] = $this->m_tugas->tampil_jawaban($id)->result();
+        // echo $this->db->last_query();
         // foreach ($data['soal'] as $key => $value) {
         //     $data['pilihan'][] = $this->m_tugas->tampil_pilihan($value->pertanyaan_id)->result();
         // }
@@ -604,4 +605,28 @@ class Guru extends CI_Controller
 
 	  $writer->save('php://output');
      }
+
+     //evaluasi
+    public function evaluasi()
+    {
+        $this->load->model('m_tugas');
+
+        $data['user'] = $this->db->get_where('guru', ['email' =>
+            $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->m_tugas->tampil_kelas($this->db->get_where('guru', ['email' =>
+        $this->session->userdata('email')])->row()->nip)->result();
+        // echo $this->db->last_query();
+        $this->load->view('guru/evaluasi', $data);
+    }
+
+    public function evaluasi_kelas($id)
+    {
+        $this->load->model('m_tugas');
+
+        $data['user'] = $this->db->get_where('guru', ['email' =>
+            $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->m_tugas->tampil_kelas($id)->result();
+        // echo $this->db->last_query();
+        $this->load->view('guru/evaluasi_kelas', $data);
+    }
 }

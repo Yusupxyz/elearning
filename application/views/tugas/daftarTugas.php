@@ -103,8 +103,8 @@
     <!-- Start Lesson Cards -->
     <div class="container">
         <div class="row mt-4">
-            <?php foreach ($tugas as $u) {
-                if ($u->jawaban==null){
+            <?php  if ($cekJawaban==null){
+                 foreach ($tugas as $u) {
                     ?> ?>
                 
                 <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-duration="1200">
