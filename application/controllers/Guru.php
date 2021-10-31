@@ -615,7 +615,7 @@ class Guru extends CI_Controller
             $this->session->userdata('email')])->row_array();
         $data['user'] = $this->m_tugas->tampil_kelas($this->db->get_where('guru', ['email' =>
         $this->session->userdata('email')])->row()->nip)->result();
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
         $this->load->view('guru/evaluasi', $data);
     }
 
@@ -626,15 +626,48 @@ class Guru extends CI_Controller
 
         $data['user'] = $this->db->get_where('guru', ['email' =>
             $this->session->userdata('email')])->row_array();
-        $siswa = $this->m_siswa->tampil_databyKelas($id,$nip)->result();
 
+            //grafik 1
+        $siswa = $this->m_siswa->tampil_databyKelas($id)->result();
         foreach ($siswa as $key => $value) {
            $x[$value->id] = $this->m_tugas->tampil_rata($id,$nip,$value->nis)->row()->nilai;
         }        
        $data['data']=$x;
        $data['siswa']=$siswa;
-       var_dump($data['data']);
+        //    var_dump($data['data']);
+
+        //grafik 2 
+        $tugas = $this->m_tugas->tampil_databyKelas($id,$nip)->result();
+            // echo $this->db->last_query();
+        foreach ($tugas as $key => $value) {
+        $y[$value->id] = $this->m_tugas->tampil_rata2($id,$nip)->row()->nilai;
+        }        
+        $data['data2']=$y;
+        $data['tugas']=$tugas;
+        //    var_dump($data['data']);
+        $data['table'] = $this->m_tugas->tampilMaxMin($id,$nip)->result();
+                // echo $this->db->last_query();
 
         $this->load->view('guru/evaluasi_kelas', $data);
+    }
+
+    public function detail_evaluasi($id,$nip)
+    {
+        $this->load->model('m_siswa');
+        $this->load->model('m_tugas');
+
+        $data['user'] = $this->db->get_where('guru', ['email' =>
+            $this->session->userdata('email')])->row_array();
+
+            //grafik 1
+        $siswa = $this->m_siswa->tampil_databyKelas($id)->result();
+        foreach ($siswa as $key => $value) {
+           $x[$value->id] = $this->m_tugas->tampil_rata($id,$nip,$value->nis)->row()->nilai;
+        }        
+       $data['data']=$x;
+       $data['siswa']=$siswa;
+        //    var_dump($data['data']);
+
+        $this->load->view('guru/detail_evaluasi', $data);
     }
 }

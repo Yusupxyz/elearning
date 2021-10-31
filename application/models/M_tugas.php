@@ -172,6 +172,35 @@ class M_tugas extends CI_Model
         return $this->db->get('jawaban');
     }
 
+    public function tampil_rata2($tugas,$nip)
+    {
+        $this->db->select('AVG(nilai) as nilai');
+        $this->db->join('tugas', 'tugas.id = jawaban.tugas_id','left');
+        $this->db->where('jawaban.tugas_id',$tugas);
+        $this->db->where('tugas.nip',$nip);
+        return $this->db->get('jawaban');
+    }
+
+    public function tampilMaxMin($tugas,$nip)
+    {
+        $this->db->select('*, max(nilai) as min, min(nilai) as max');
+        $this->db->join('tugas', 'tugas.id = jawaban.tugas_id','left');
+        $this->db->join('tugas_kelas', 'tugas.id = tugas_kelas.tugas_id','left');
+        $this->db->join('siswa', 'siswa.id = jawaban.siswa_id','left');
+        $this->db->where('jawaban.tugas_id',$tugas);
+        $this->db->where('tugas.nip',$nip);
+        return $this->db->get('jawaban');
+    }
+
+    public function tampil_databyKelas($kelas,$nip)
+    {
+        $this->db->select('*');
+        $this->db->join('tugas_kelas', 'tugas_kelas.tugas_id = tugas.id','left');
+        $this->db->where('kelas_id',$kelas);
+        $this->db->where('nip',$nip);
+        return $this->db->get('tugas');
+    }
+
     public function data($tugas,$kelas,$id)
     {
         $this->db->select('*,tugas.id as tugas');
