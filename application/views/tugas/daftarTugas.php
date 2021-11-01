@@ -102,10 +102,13 @@
 
     <!-- Start Lesson Cards -->
     <div class="container">
-        <div class="row mt-4">
-            <?php  if ($cekJawaban==null){
+    <?php  $i=0;
                  foreach ($tugas as $u) {
-                    ?> ?>
+                    //  var_dump($cekJawaban[$i++]);
+                     if(count($cekJawaban[$i++][$u->mapel_id])==0){
+                    ?> 
+        <div class="row mt-4">
+     
                 
                 <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-duration="1200">
                     <div class="card tugas w-150 border-0">
@@ -119,8 +122,8 @@
                         </div>
                     </div>
                 </div>
-            <?php } } ?>
-        </div>
+        </div>            <?php } } ?>
+
     </div>
     <!-- End Lesson Cards -->
 

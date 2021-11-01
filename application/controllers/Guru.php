@@ -640,12 +640,14 @@ class Guru extends CI_Controller
         $tugas = $this->m_tugas->tampil_databyKelas($id,$nip)->result();
             // echo $this->db->last_query();
         foreach ($tugas as $key => $value) {
-        $y[$value->id] = $this->m_tugas->tampil_rata2($id,$nip)->row()->nilai;
+            $y[$value->id] = $this->m_tugas->tampil_rata2($id,$nip)->row()->nilai;
+            $table[$value->id] = $this->m_tugas->tampilMaxMin($value->tugas_id,$nip)->result();
         }        
         $data['data2']=$y;
         $data['tugas']=$tugas;
         //    var_dump($data['data']);
-        $data['table'] = $this->m_tugas->tampilMaxMin($id,$nip)->result();
+        $data['table'] = $table;
+        // var_dump($data['table']);
                 // echo $this->db->last_query();
 
         $this->load->view('guru/evaluasi_kelas', $data);

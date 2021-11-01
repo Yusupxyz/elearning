@@ -381,7 +381,7 @@ echo $data['user']['nama_guru'];
                                         <tbody>
                                             <?php
                                             $i=1;
-                                            foreach ($table as $u) {
+                                            foreach ($tugas as $u) {
                                             ?>
                                                 <tr class="text-center">
 
@@ -396,11 +396,11 @@ echo $data['user']['nama_guru'];
                                                       </td>
 
                                                     <td>
-                                                    <strong class="text-success"><?php echo $u->max ?></strong>
+                                                    <strong class="text-success"><?php echo $table[$u->tugas_id][0]->max ?></strong>
 
                                                     </td>
                                                     <td>
-                                                    <strong class="text-success"><?php echo $u->min ?></strong>
+                                                    <strong class="text-success"><?php echo $table[$u->tugas_id][0]->min ?></strong>
 
                                                     </td>
                                                     

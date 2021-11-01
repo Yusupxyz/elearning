@@ -31,6 +31,7 @@ class M_tugas extends CI_Model
         $this->db->join('kelas', 'tugas_kelas.kelas_id = kelas.id','left');
         $this->db->join('mapel', 'mapel.id = tugas.mapel_id','left');
         $this->db->where('nip',$nip);
+        $this->db->group_by('kelas_id');
         return $this->db->get('tugas');
     }
 
