@@ -391,7 +391,7 @@ echo $data['user']['nama_guru'];
                                                     
 
                                                     <td class="text-center">
-                                                        <a href="<?php echo site_url('guru/evaluasi_kelas/' . $u->tugas_id.'/'.$u->nip); ?>" class="btn btn-primary"><i class="fa fa-check"></i>Evaluasi </a>
+                                                        <a href="<?php echo site_url('guru/evaluasi_kelas/' . $u->tugas_id.'/'.$u->nip.'/'.$u->kelas_id); ?>" class="btn btn-primary"><i class="fa fa-check"></i>Evaluasi </a>
                                                        
                                                         </td>
 

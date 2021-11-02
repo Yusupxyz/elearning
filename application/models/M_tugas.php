@@ -163,11 +163,20 @@ class M_tugas extends CI_Model
         return $this->db->get('siswa');
     }
 
+    public function tampil_nilai($tugas,$nip,$siswa)
+    {
+        $this->db->select('nilai');
+        $this->db->join('tugas', 'tugas.id = jawaban.tugas_id','left');
+        $this->db->where('jawaban.tugas_id',$tugas);
+        $this->db->where('tugas.nip',$nip);
+        $this->db->where('jawaban.siswa_id',$siswa);
+        return $this->db->get('jawaban');
+    }
+
     public function tampil_rata($tugas,$nip,$siswa)
     {
         $this->db->select('AVG(nilai) as nilai');
         $this->db->join('tugas', 'tugas.id = jawaban.tugas_id','left');
-        $this->db->where('jawaban.tugas_id',$tugas);
         $this->db->where('tugas.nip',$nip);
         $this->db->where('jawaban.siswa_id',$siswa);
         return $this->db->get('jawaban');
@@ -198,6 +207,14 @@ class M_tugas extends CI_Model
         $this->db->select('*');
         $this->db->join('tugas_kelas', 'tugas_kelas.tugas_id = tugas.id','left');
         $this->db->where('kelas_id',$kelas);
+        $this->db->where('nip',$nip);
+        return $this->db->get('tugas');
+    }
+
+    public function tampil_databyKelas2($tugas,$nip)
+    {
+        $this->db->select('*');
+        $this->db->where('id',$tugas);
         $this->db->where('nip',$nip);
         return $this->db->get('tugas');
     }

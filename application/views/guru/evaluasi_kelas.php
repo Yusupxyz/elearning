@@ -315,7 +315,7 @@ echo $data['user']['nama_guru'];
                         <div class="kt-subheader__main">
                             <h1 class="kt-subheader__title font-weight-bold"
                                 style="font-size: 35px !important; letter-spacing:-1px;">
-                                Evaluasi Nilai Tugas Siswa Kelas </h1>
+                                Evaluasi Nilai Tugas Siswa Kelas <?= $kelas ?> </h1>
                         </div>
                         <div class="kt-subheader__toolbar">
                             <div class="kt-subheader__wrapper">
@@ -406,7 +406,7 @@ echo $data['user']['nama_guru'];
                                                     
 
                                                     <td class="text-center">
-                                                        <a href="<?php echo site_url('guru/detail_evaluasi/'  . $u->tugas_id.'/'.$u->nip); ?>" class="btn btn-primary"><i class="fa fa-check"></i>Detail </a>
+                                                        <a href="<?php echo site_url('guru/detail_evaluasi/'  . $u->tugas_id.'/'.$u->nip.'/'.$kelas_id); ?>" class="btn btn-primary"><i class="fa fa-check"></i>Detail </a>
                                                        
                                                         </td>
 

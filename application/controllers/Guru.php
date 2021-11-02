@@ -619,16 +619,17 @@ class Guru extends CI_Controller
         $this->load->view('guru/evaluasi', $data);
     }
 
-    public function evaluasi_kelas($id,$nip)
+    public function evaluasi_kelas($id,$nip,$kelas)
     {
         $this->load->model('m_siswa');
         $this->load->model('m_tugas');
+        $this->load->model('m_kelas');
 
         $data['user'] = $this->db->get_where('guru', ['email' =>
             $this->session->userdata('email')])->row_array();
 
             //grafik 1
-        $siswa = $this->m_siswa->tampil_databyKelas($id)->result();
+        $siswa = $this->m_siswa->tampil_databyKelas($kelas)->result();
         foreach ($siswa as $key => $value) {
            $x[$value->id] = $this->m_tugas->tampil_rata($id,$nip,$value->nis)->row()->nilai;
         }        
@@ -648,27 +649,34 @@ class Guru extends CI_Controller
         //    var_dump($data['data']);
         $data['table'] = $table;
         // var_dump($data['table']);
-                // echo $this->db->last_query();
 
+        $data['kelas'] = $this->m_kelas->tampil_data_by_id_kelas($id)->row()->nama;
+        $data['kelas_id'] = $this->m_kelas->tampil_data_by_id_kelas($id)->row()->id;
+        // echo $this->db->last_query();
         $this->load->view('guru/evaluasi_kelas', $data);
     }
 
-    public function detail_evaluasi($id,$nip)
+    public function detail_evaluasi($id,$nip,$kelas)
     {
         $this->load->model('m_siswa');
         $this->load->model('m_tugas');
+        $this->load->model('m_kelas');
 
         $data['user'] = $this->db->get_where('guru', ['email' =>
             $this->session->userdata('email')])->row_array();
+        $data['table'] = $this->m_tugas->tampil_databyKelas2($id,$nip)->result();
+        $data['kelas'] = $this->m_kelas->tampil_data_by_id_kelas($id)->row()->nama;
 
-            //grafik 1
-        $siswa = $this->m_siswa->tampil_databyKelas($id)->result();
+        //grafik 1
+        $siswa = $this->m_siswa->tampil_databyKelas($kelas)->result();
+        echo $this->db->last_query();
+
         foreach ($siswa as $key => $value) {
-           $x[$value->id] = $this->m_tugas->tampil_rata($id,$nip,$value->nis)->row()->nilai;
+            $x[$value->id] = $this->m_tugas->tampil_nilai($id,$nip,$value->nis)->row()->nilai;
         }        
-       $data['data']=$x;
-       $data['siswa']=$siswa;
-        //    var_dump($data['data']);
+        $data['data']=$x;
+        $data['siswa']=$siswa;
+
 
         $this->load->view('guru/detail_evaluasi', $data);
     }

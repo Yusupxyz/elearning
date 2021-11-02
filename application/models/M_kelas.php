@@ -16,6 +16,13 @@ class M_kelas extends CI_Model
         return $this->db->get('kelas');
     }
 
+    public function tampil_data_by_id_kelas($id)
+    {
+        $this->db->select('*');
+        $this->db->where('kelas.id',$id);
+        return $this->db->get('kelas');
+    }
+
     function get_category(){
         return $this->db->get('kelas_kategori');
     }

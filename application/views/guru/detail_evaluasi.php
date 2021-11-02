@@ -315,7 +315,7 @@ echo $data['user']['nama_guru'];
                         <div class="kt-subheader__main">
                             <h1 class="kt-subheader__title font-weight-bold"
                                 style="font-size: 35px !important; letter-spacing:-1px;">
-                                Evaluasi Nilai Tugas Siswa Kelas </h1>
+                                Evaluasi Nilai Tugas Siswa Kelas <?= $kelas ?> </h1>
                         </div>
                         <div class="kt-subheader__toolbar">
                             <div class="kt-subheader__wrapper">
@@ -357,13 +357,7 @@ echo $data['user']['nama_guru'];
                         <div class="row">
                         <div class="col-md-12">
                             <div class="bg-white p-4" style="border-radius:3px;box-shadow:rgba(0, 0, 0, 0.03) 0px 4px 8px 0px">
-                                <div class="row">
-                                    <div class="col-6">
-                                    <div id="columnchart" style="width: 600px; height: 400px;"></div>
-                                    </div>
-                                    <div class="col-6">
-                                    <div id="columnchart2" style="width: 600px; height: 400px;"></div>
-                                </div>
+
                                
                            
                             <div class="table-responsive">
@@ -372,9 +366,7 @@ echo $data['user']['nama_guru'];
                                             <tr class="text-center">
                                                 <th scope="col">No.</th>
                                                 <th scope="col">Tugas</th>
-                                                <th scope="col">Nilai Tertinggi</th>
-                                                <th scope="col">Nilai Terendah</th>
-                                                <th scope="col">Option</th>
+                                                <th scope="col">Tanggal Dibuat</th>
                                             </tr>
                                         </thead>
 
@@ -391,24 +383,14 @@ echo $data['user']['nama_guru'];
 
                                                     <td>
                                                         <strong class="text-warning"><?php echo $u->judul ?></strong>
-                                                        <br><small><b>Tanggal dibuat : </b> <?php echo $u->tgl_buat ?></small>
                                                         
                                                       </td>
 
                                                     <td>
-                                                    <strong class="text-success"><?php echo $u->max ?></strong>
-
-                                                    </td>
-                                                    <td>
-                                                    <strong class="text-success"><?php echo $u->min ?></strong>
+                                                    <strong class="text-success"><?php echo $u->tgl_buat ?></strong>
 
                                                     </td>
                                                     
-
-                                                    <td class="text-center">
-                                                        <a href="<?php echo site_url('guru/detail_evaluasi/'  . $u->tugas_id.'/'.$u->nip); ?>" class="btn btn-primary"><i class="fa fa-check"></i>Detail </a>
-                                                       
-                                                        </td>
 
                                                 </tr>
                                             <?php
@@ -419,6 +401,13 @@ echo $data['user']['nama_guru'];
                                 </div>
 
                             </div>
+                            <div class="row">
+                                    <div class="col-6">
+                                    <div id="columnchart" style="width: 600px; height: 400px;"></div>
+                                    </div>
+                                    <div class="col-6">
+                                    <div id="columnchart2" style="width: 600px; height: 400px;"></div>
+                                </div>
                         </div>
                         </div>
 
@@ -660,7 +649,7 @@ echo $data['user']['nama_guru'];
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-                    ['Siswa', 'Rata-rata Nilai Siswa'],
+                    ['Siswa', 'Nilai'],
                     <?php
                     foreach ($siswa as $key => $value) {
                         echo "['".$value->nama."', ".$data[$value->id]."],";
@@ -670,29 +659,11 @@ echo $data['user']['nama_guru'];
         ]);
  
         var options = {
-          title: 'Grafik Perbandingan Rata-rata Nilai Siswa'
+          title: 'Grafik Perbandingan Nilai Siswa'
         };
  
         var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
         chart.draw(data, options);
-
-
-        var data2 = google.visualization.arrayToDataTable([
-                    ['Siswa', 'Rata-rata Nilai Tugas', { role: 'style' }],
-                    <?php
-                    foreach ($tugas as $key => $value) {
-                        echo "['".$value->judul."', ".$data2[$value->id].",'gold'],";
-                    }
-                    ?>
- 
-        ]);
- 
-        var options2 = {
-          title: 'Grafik Perbandingan Rata-rata Nilai Tugas',
-          colors: ['gold']
-        };
-        var chart2 = new google.visualization.LineChart(document.getElementById('columnchart2'));
-        chart2.draw(data2, options2);
       }
     </script>
     <!--end::Global App Bundle -->
