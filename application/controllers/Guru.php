@@ -630,10 +630,14 @@ class Guru extends CI_Controller
 
             //grafik 1
         $siswa = $this->m_siswa->tampil_databyKelas($kelas)->result();
+        $x=array();
+        $y=array();
+        $table=array();
+
         foreach ($siswa as $key => $value) {
            $x[$value->id] = $this->m_tugas->tampil_rata($id,$nip,$value->nis)->row()->nilai;
         }        
-       $data['data']=$x;
+        $data['data']=$x;
        $data['siswa']=$siswa;
         //    var_dump($data['data']);
 
