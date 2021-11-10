@@ -656,6 +656,8 @@ echo $data['user']['nama_guru'];
         });
     </script>
      <script type="text/javascript">
+         <?php if ($siswa!=null){ ?>
+
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
@@ -694,6 +696,8 @@ echo $data['user']['nama_guru'];
         var chart2 = new google.visualization.LineChart(document.getElementById('columnchart2'));
         chart2.draw(data2, options2);
       }
+
+<?php } ?>
     </script>
     <!--end::Global App Bundle -->
 </body>
