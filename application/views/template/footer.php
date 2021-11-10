@@ -69,7 +69,7 @@
                                     <label class="label-font" for="
                                         exampleFormControlInput1">
                                         NIS</label>
-                                    <input type="text" value="<?= set_value('nis'); ?>" class="form-control" name="nis" autocomplete="off" id="nis" placeholder="Masukan email mu disini ..">
+                                    <input type="text" value="<?= set_value('nis'); ?>" class="form-control" name="nis" autocomplete="off" id="nis" placeholder="Masukan nis mu disini ..">
                                     <small class="text-danger"></small>
                                 </div>
                                 <div class="form-group">
