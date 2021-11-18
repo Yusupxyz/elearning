@@ -206,7 +206,7 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                                 <div id="" class="row">
                                     <div class="form-group col-12">
                                         <label>Mata Pelajaran yang diajar</label>
-                                        <select class="form-control selectric" name="mapel" required>
+                                        <select class="form-control selectric" name="mapel" id="mapel" required>
                                             <option  value="">--Pilih--</option>
                                             <?php foreach($mapel as $row):?>
                                             <option value="<?php echo $row->id;?>"><?php echo $row->nama;?></option>
@@ -215,7 +215,14 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                                         <?= form_error('mapel', '<small class="text-danger">', '</small>'); ?>
                                     </div>
                                 </div>
-
+                                <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label for="inputEmail4">Daftar Kelas (Pilih Mapel Terlebih Dahulu)</label>
+                                            <div id="kelas">
+                                            </div>
+                                    
+                                        </div>
+                                    </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" name="agree" class="custom-control-input" id="agree">
@@ -271,6 +278,29 @@ guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
     <script>
         $(document).ready(function() {
             $('#example').DataTable();
+
+            $('#mapel').change(function(){ 
+                var id=$(this).val();
+                $.ajax({
+                    url : "<?php echo site_url('admin/get_kelas');?>",
+                    method : "POST",
+                    data : {id: id},
+                    async : true,
+                    dataType : 'json',
+                    success: function(data){
+                         console.log(data);
+                        var html = '';
+                        var i;
+                        for(i=0; i<data.length; i++){
+                            html += ' <div class="checkbox" ><label><input type="checkbox" name="kelas[]" value="'+data[i].kelas+'">'+data[i].nama+'</div>';
+                        }
+                        $('#kelas').html(html);
+ 
+                    }
+                });
+                return false;
+            }); 
+             
         });
     </script>
     <!-- Template JS File -->

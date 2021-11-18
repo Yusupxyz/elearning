@@ -274,7 +274,9 @@ class Admin extends CI_Controller
     {
         $this->load->model('m_guru');
         $where = array('nip' => $nip);
+        $where2 = array('id_guru' => $nip);
         $this->m_guru->delete_guru($where, 'guru');
+        $this->m_guru->delete_guru($where2, 'kelas_guru');
         $this->session->set_flashdata('user-delete', 'berhasil');
         redirect('admin/data_guru');
     }
@@ -282,6 +284,7 @@ class Admin extends CI_Controller
     public function add_guru()
     {
         $this->load->model('m_mapel');
+        $this->load->model('m_kelas');
 
         $this->form_validation->set_rules('nip', 'Nip', 'required|trim|min_length[4]', [
             'required' => 'Harap isi kolom NIP.',
@@ -310,8 +313,10 @@ class Admin extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['mapel'] = $this->m_mapel->tampil_data()->result();
+            $data['user'] = $this->m_kelas->tampil_data()->result();  
             $this->load->view('guru/registration', $data);
         } else {
+            $kelas=$this->input->post('kelas', true);
             $data = [
                 'nip' => htmlspecialchars($this->input->post('nip', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
@@ -321,6 +326,14 @@ class Admin extends CI_Controller
             ];
 
             $this->db->insert('guru', $data);
+            $id= $this->db->insert_id();
+            for ($i=0; $i < count($kelas); $i++) { 
+                $data = [
+                    'id_guru' => htmlspecialchars($this->input->post('nip', true)),
+                    'id_kelas' => $kelas[$i]
+                ];
+                $this->db->insert('kelas_guru', $data);
+            }
 
             $this->session->set_flashdata('success-reg', 'Berhasil!');
             redirect(base_url('admin/data_guru'));
@@ -625,6 +638,14 @@ class Admin extends CI_Controller
         }
         $this->session->set_flashdata('success-edit', 'berhasil');
         redirect('admin/data_kategori_kelas');
+    }
+
+    function get_kelas(){
+        $this->load->model('m_kelas');
+
+        $mapel_id = $this->input->post('id',TRUE);
+        $data = $this->m_kelas->tampil_data_by_id($mapel_id)->result();
+        echo json_encode($data);
     }
 
 }

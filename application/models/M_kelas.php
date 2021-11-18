@@ -16,6 +16,14 @@ class M_kelas extends CI_Model
         return $this->db->get('kelas');
     }
 
+    public function tampil_data_by_nip($nip)
+    {
+        $this->db->select('*,kelas.id as kelas');
+        $this->db->join('kelas', 'kelas.id = kelas_guru.id_kelas','left');
+        $this->db->where('kelas_guru.id_guru',$nip);
+        return $this->db->get('kelas_guru');
+    }
+
     public function tampil_data_by_id_kelas($id)
     {
         $this->db->select('*');

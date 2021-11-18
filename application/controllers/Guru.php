@@ -38,9 +38,9 @@ class Guru extends CI_Controller
         if ($this->form_validation->run() == false) {
 
             $data['user'] = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row();
-            $id = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row()->id;
-            $data['kelas'] = $this->m_kelas->tampil_data_by_id($id)->result();
-            // echo $this->db->last_query();
+            $nip = $this->m_guru->tampil_data_byid($this->session->userdata('email'))->row()->nip;
+            $data['kelas'] = $this->m_kelas->tampil_data_by_nip($nip)->result();
+            echo $this->db->last_query();
             $this->load->view('guru/add_materi',$data);
         } else {
             $upload_video = $_FILES['video'];
