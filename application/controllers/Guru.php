@@ -635,7 +635,12 @@ class Guru extends CI_Controller
         $table=array();
 
         foreach ($siswa as $key => $value) {
-           $x[$value->id] = $this->m_tugas->tampil_rata($id,$nip,$value->nis)->row()->nilai;
+           $temp = $this->m_tugas->tampil_rata($id,$nip,$value->nis)->row()->nilai;
+           if ($temp==null){
+                $x[$value->id]=0;
+           }else{
+                $x[$value->id]=$temp;
+           }
         }        
         $data['data']=$x;
        $data['siswa']=$siswa;
@@ -673,10 +678,15 @@ class Guru extends CI_Controller
 
         //grafik 1
         $siswa = $this->m_siswa->tampil_databyKelas($kelas)->result();
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
 
         foreach ($siswa as $key => $value) {
-            $x[$value->id] = $this->m_tugas->tampil_nilai($id,$nip,$value->nis)->row()->nilai;
+            $temp = $this->m_tugas->tampil_nilai($id,$nip,$value->nis)->row()->nilai;
+            if ($temp==null){
+                $x[$value->id]=0;
+           }else{
+                $x[$value->id]=$temp;
+           }
         }        
         $data['data']=$x;
         $data['siswa']=$siswa;
